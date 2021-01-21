@@ -46,7 +46,8 @@ namespace NorthwindUI
             lblShippedDate.Text = orderDetail.ShippedDate.ToString("dd/MM/yyyy");
             lblCompanyName.Text = orderDetail.CompanyName.ToString();
             lblContactName.Text = orderDetail.ContactName.ToString();
-            
+            //test
+
             //custOrderHistBindingSource.ResetBindings.
             //lblProductName.Text = orderDetail.ProductName;
 
