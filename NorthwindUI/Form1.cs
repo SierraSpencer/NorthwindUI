@@ -51,7 +51,8 @@ namespace NorthwindUI
             //custOrderHistBindingSource.ResetBindings.
             //lblProductName.Text = orderDetail.ProductName;
 
-            //dgvProducts.DataSource = dbMethods.OrderDetailReader(orderId);
+            dgvProducts.DataSource = dbMethods.OrderDetailReader(orderId);
+            
 
             //if ()
             //this.custOrdersDetailTableAdapter.Fill(this.northwindDataSet5.CustOrdersDetail, (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value);
@@ -88,6 +89,12 @@ namespace NorthwindUI
         private void lblContactName_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            NewOrder newOrder = new NewOrder();
+            newOrder.Show();
         }
     }
 }

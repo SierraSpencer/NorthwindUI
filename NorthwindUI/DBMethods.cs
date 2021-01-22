@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -61,7 +62,7 @@ namespace NorthwindUI
             }
         }
 
-        public SqlDataReader OrderDetailReader(int OrderId)
+        public DataTable OrderDetailReader(int OrderId)
         {
 
             using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
@@ -80,9 +81,38 @@ namespace NorthwindUI
                 // execute the command
                 using (SqlDataReader rdr = cmd.ExecuteReader())
                 {
-                    return rdr;
+                    DataTable dt = new DataTable();
+                    dt.Load(rdr);
+                    return dt;
                 }
             }
         }
+
+        public DataRow GetProductDetails(int ProductId)
+        {
+
+            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            {
+                conn.Open();
+
+                // 1.  create a command object identifying the stored procedure
+                SqlCommand cmd = new SqlCommand("GetProductDetail", conn);
+
+                // 2. set the command object so it knows to execute a stored procedure
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                // 3. add parameter to command, which will be passed to the stored procedure
+                cmd.Parameters.Add(new SqlParameter("@ProductID", ProductId));
+
+                // execute the command
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    DataTable dt = new DataTable();
+                    dt.Load(rdr);
+                    return dt.Rows[0];
+                }
+            }
+        }
+
     }
 }
