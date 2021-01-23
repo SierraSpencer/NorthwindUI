@@ -30,14 +30,13 @@ namespace NorthwindUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtOrderNumber = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblOrder = new System.Windows.Forms.Label();
             this.lblCustomer = new System.Windows.Forms.Label();
             this.cboCustomer = new System.Windows.Forms.ComboBox();
             this.northwindDataSet9 = new NorthwindUI.NorthwindDataSet9();
@@ -79,23 +78,15 @@ namespace NorthwindUI
             this.label1.TabIndex = 1;
             this.label1.Text = "Order Number";
             // 
-            // txtOrderNumber
+            // lblOrder
             // 
-            this.txtOrderNumber.Location = new System.Drawing.Point(626, 365);
-            this.txtOrderNumber.Name = "txtOrderNumber";
-            this.txtOrderNumber.Size = new System.Drawing.Size(168, 20);
-            this.txtOrderNumber.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.MistyRose;
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(296, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "111111";
+            this.lblOrder.AutoSize = true;
+            this.lblOrder.BackColor = System.Drawing.Color.MistyRose;
+            this.lblOrder.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrder.Location = new System.Drawing.Point(296, 55);
+            this.lblOrder.Name = "lblOrder";
+            this.lblOrder.Size = new System.Drawing.Size(0, 18);
+            this.lblOrder.TabIndex = 3;
             // 
             // lblCustomer
             // 
@@ -203,17 +194,18 @@ namespace NorthwindUI
             // 
             // dgvProducts
             // 
+            this.dgvProducts.AllowUserToAddRows = false;
             this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProducts.BackgroundColor = System.Drawing.Color.Salmon;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductID,
@@ -221,14 +213,14 @@ namespace NorthwindUI
             this.ProductPrice});
             this.dgvProducts.Location = new System.Drawing.Point(163, 214);
             this.dgvProducts.Name = "dgvProducts";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvProducts.RowHeadersVisible = false;
             this.dgvProducts.Size = new System.Drawing.Size(599, 113);
             this.dgvProducts.TabIndex = 11;
@@ -249,26 +241,26 @@ namespace NorthwindUI
             // 
             // ProductID
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ProductID.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ProductID.DefaultCellStyle = dataGridViewCellStyle12;
             this.ProductID.HeaderText = "Product ID";
             this.ProductID.Name = "ProductID";
             this.ProductID.Width = 141;
             // 
             // ProductName
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.ProductName.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.ProductName.DefaultCellStyle = dataGridViewCellStyle13;
             this.ProductName.HeaderText = "Product Name";
             this.ProductName.Name = "ProductName";
             this.ProductName.Width = 168;
             // 
             // ProductPrice
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.ProductPrice.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Format = "N2";
+            dataGridViewCellStyle14.NullValue = null;
+            this.ProductPrice.DefaultCellStyle = dataGridViewCellStyle14;
             this.ProductPrice.HeaderText = "Product Price";
             this.ProductPrice.Name = "ProductPrice";
             this.ProductPrice.Width = 165;
@@ -283,6 +275,7 @@ namespace NorthwindUI
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // NewOrder
             // 
@@ -300,8 +293,7 @@ namespace NorthwindUI
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cboCustomer);
             this.Controls.Add(this.lblCustomer);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtOrderNumber);
+            this.Controls.Add(this.lblOrder);
             this.Controls.Add(this.label1);
             this.Name = "NewOrder";
             this.Text = "NewOrder";
@@ -321,8 +313,7 @@ namespace NorthwindUI
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtOrderNumber;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblOrder;
         private System.Windows.Forms.Label lblCustomer;
         private System.Windows.Forms.ComboBox cboCustomer;
         private NorthwindDataSet9 northwindDataSet9;

@@ -42,14 +42,15 @@ namespace NorthwindUI
 
             DataRow productDetails = dbMethods.GetProductDetails((int)cboProductSelection.SelectedValue);
 
-            DataGridViewRow row = (DataGridViewRow)dgvProducts.Rows[0].Clone();
+            this.dgvProducts.Rows.Add(productDetails[0], productDetails[1], productDetails[2]);//, productDetails[3]);
+           // DataGridViewRow row = (DataGridViewRow)dgvProducts.Rows[0].Clone();
 
-            for (int i = 0; i < 3; i++)
-            {
-                row.Cells[i].Value = productDetails[i];
-            }
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    row.Cells[i].Value = productDetails[i];
+            //}
 
-            dgvProducts.Rows.Add(row);
+            //dgvProducts.Rows.Add(row);
 
             string selectedPruduct = cboCustomer.Text;
             cboCustomer.DataSource = null;
@@ -62,6 +63,21 @@ namespace NorthwindUI
             //addproducttogrid
 
 
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            DBMethods dbMethods = new DBMethods();
+
+            int orderId = dbMethods.CreateNewOrder(cboCustomer.Text, 1, DateTime.Parse(lblDate.Text), DateTime.Now, DateTime.Now.AddDays(5));
+
+            lblOrder.Text = orderId.ToString();
+
+            foreach (DataGridViewRow row in dgvProducts.Rows)
+            {
+                dbMethods.AddProductToOrder(orderId, (int)row.Cells[0].Value, (decimal)row.Cells[2].Value);
+            }
+            //add products to order
         }
     }
 }

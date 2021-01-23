@@ -114,5 +114,66 @@ namespace NorthwindUI
             }
         }
 
+        public int CreateNewOrder(String CustomerName, int EmployeeID, DateTime OrderDate, DateTime RequiredDate, DateTime ShippedDate)
+        {
+
+            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            {
+                conn.Open();
+
+                // 1.  create a command object identifying the stored procedure
+                SqlCommand cmd = new SqlCommand("AddNewOrder", conn);
+
+                // 2. set the command object so it knows to execute a stored procedure
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                // 3. add parameter to command, which will be passed to the stored procedure
+                cmd.Parameters.Add(new SqlParameter("@CustomerName", CustomerName));
+                cmd.Parameters.Add(new SqlParameter("@EmployeeID", EmployeeID));
+                cmd.Parameters.Add(new SqlParameter("@OrderDate", OrderDate));
+                cmd.Parameters.Add(new SqlParameter("@RequiredDate", RequiredDate));
+                cmd.Parameters.Add(new SqlParameter("@ShippedDate", ShippedDate));
+
+                // execute the command
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    rdr.Read();
+                    return (int)rdr.GetDecimal(0);
+                    //return rdr.GetInt32(0);
+                }
+            }
+        }
+
+        public void AddProductToOrder(int OrderID, int ProductID, decimal UnitPrice)//, int Quantity)//, int Discount)
+        {
+
+            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            {
+                conn.Open();
+
+                // 1.  create a command object identifying the stored procedure
+                SqlCommand cmd = new SqlCommand("AddProductsToOrder", conn);
+
+                // 2. set the command object so it knows to execute a stored procedure
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                // 3. add parameter to command, which will be passed to the stored procedure
+                cmd.Parameters.Add(new SqlParameter("@OrderID", OrderID));
+                cmd.Parameters.Add(new SqlParameter("@ProductID", ProductID));
+                cmd.Parameters.Add(new SqlParameter("@UnitPrice", UnitPrice));
+                cmd.Parameters.Add(new SqlParameter("@Quantity", 1));
+                cmd.Parameters.Add(new SqlParameter("@Discount", 1));
+
+                // execute the command
+                cmd.ExecuteNonQuery();
+                //using (SqlDataReader rdr = cmd.ExecuteReader())
+                //{
+                //    rdr.Read();
+                //    return (int)rdr.GetDecimal(0);
+                //    //return rdr.GetInt32(0);
+                //}
+            }
+        }
+
     }
 }
