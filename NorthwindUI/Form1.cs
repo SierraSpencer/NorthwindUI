@@ -28,12 +28,6 @@ namespace NorthwindUI
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AllOrders.Text = DateTime.Now.ToString();
-            dataGridView1.Refresh();
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DBMethods dbMethods = new DBMethods();
@@ -51,7 +45,7 @@ namespace NorthwindUI
             //custOrderHistBindingSource.ResetBindings.
             //lblProductName.Text = orderDetail.ProductName;
 
-            dgvProducts.DataSource = dbMethods.OrderDetailReader(orderId);
+            dgvProducts.DataSource = dbMethods.ProductsInOrder(orderId);
             
 
             //if ()
@@ -94,7 +88,65 @@ namespace NorthwindUI
         private void btnCreate_Click(object sender, EventArgs e)
         {
             NewOrder newOrder = new NewOrder();
-            newOrder.Show();
+            newOrder.SetMainForm(this);
+            newOrder.ShowDialog();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+
+            if (!int.TryParse(selectedRow.Cells[0].Value.ToString(), out _))
+            {
+                MessageBox.Show("This order does not have an ID", "Error", MessageBoxButtons.OK);
+                return;
+            }
+
+            var confirmResult = MessageBox.Show("Are you sure to delete this Order?", "Confirm Delete", MessageBoxButtons.YesNo);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                // If 'Yes', do something here.
+                //get selected orderId
+                DBMethods dbMethods = new DBMethods();
+                int orderId = (int)selectedRow.Cells[0].Value;
+
+                //excute sp to delete order
+                dbMethods.DeleteOrder(orderId);
+
+                //refresh grid
+                this.allOrdersTableAdapter2.Fill(this.northwindDataSet4.AllOrders);
+
+                //clears rows
+                //dgvProducts.Rows.Clear();
+                dgvProducts.DataSource = null;
+            }
+        }
+
+        private void Update_Click(object sender, EventArgs e)
+        {
+            //update
+            NewOrder newOrder = new NewOrder();
+
+            DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+            int orderId = (int)selectedRow.Cells[0].Value;
+
+            newOrder.UpdateOrder(orderId);
+            newOrder.SetMainForm(this);
+            //newOrder.TopMost = true;
+            newOrder.ShowDialog(this);
+          
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            this.allOrdersTableAdapter2.Fill(this.northwindDataSet4.AllOrders);
+        }
+
+        public void RefreshOrders()
+        {
+            this.allOrdersTableAdapter2.Fill(this.northwindDataSet4.AllOrders);
         }
     }
 }

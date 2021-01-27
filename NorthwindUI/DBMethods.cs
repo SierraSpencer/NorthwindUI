@@ -62,7 +62,7 @@ namespace NorthwindUI
             }
         }
 
-        public DataTable OrderDetailReader(int OrderId)
+        public DataTable ProductsInOrder(int OrderId)
         {
 
             using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
@@ -163,6 +163,33 @@ namespace NorthwindUI
                 cmd.Parameters.Add(new SqlParameter("@UnitPrice", UnitPrice));
                 cmd.Parameters.Add(new SqlParameter("@Quantity", 1));
                 cmd.Parameters.Add(new SqlParameter("@Discount", 1));
+
+                // execute the command
+                cmd.ExecuteNonQuery();
+                //using (SqlDataReader rdr = cmd.ExecuteReader())
+                //{
+                //    rdr.Read();
+                //    return (int)rdr.GetDecimal(0);
+                //    //return rdr.GetInt32(0);
+                //}
+            }
+        }
+
+        public void DeleteOrder(int OrderID)
+        {
+
+            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            {
+                conn.Open();
+
+                // 1.  create a command object identifying the stored procedure
+                SqlCommand cmd = new SqlCommand("DeleteOrder", conn);
+
+                // 2. set the command object so it knows to execute a stored procedure
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                // 3. add parameter to command, which will be passed to the stored procedure
+                cmd.Parameters.Add(new SqlParameter("@OrderID", OrderID));
 
                 // execute the command
                 cmd.ExecuteNonQuery();

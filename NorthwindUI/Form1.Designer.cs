@@ -44,7 +44,7 @@ namespace NorthwindUI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.northwindDataSet = new NorthwindUI.NorthwindDataSet();
             this.custOrderHistBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.custOrderHistTableAdapter = new NorthwindUI.NorthwindDataSetTableAdapters.CustOrderHistTableAdapter();
@@ -86,12 +86,14 @@ namespace NorthwindUI
             this.fillToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
-            this.btnCreate = new System.Windows.Forms.Button();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExtendedPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCreate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.custOrderHistBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet1)).BeginInit();
@@ -111,15 +113,15 @@ namespace NorthwindUI
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnUpdate
             // 
-            this.button1.Location = new System.Drawing.Point(775, 649);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnUpdate.Location = new System.Drawing.Point(775, 649);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(108, 23);
+            this.btnUpdate.TabIndex = 0;
+            this.btnUpdate.Text = "Update Order";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.Update_Click);
             // 
             // northwindDataSet
             // 
@@ -527,16 +529,6 @@ namespace NorthwindUI
             this.dgvProducts.Size = new System.Drawing.Size(850, 224);
             this.dgvProducts.TabIndex = 0;
             // 
-            // btnCreate
-            // 
-            this.btnCreate.Location = new System.Drawing.Point(1359, 649);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(129, 23);
-            this.btnCreate.TabIndex = 6;
-            this.btnCreate.Text = "Create New Order";
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
-            // 
             // productNameDataGridViewTextBoxColumn
             // 
             this.productNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -596,20 +588,51 @@ namespace NorthwindUI
             this.ExtendedPrice.ReadOnly = true;
             this.ExtendedPrice.Width = 142;
             // 
+            // btnCreate
+            // 
+            this.btnCreate.Location = new System.Drawing.Point(1359, 649);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(129, 23);
+            this.btnCreate.TabIndex = 6;
+            this.btnCreate.Text = "Create New Order";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(1094, 649);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Delete Order";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(286, 649);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(133, 23);
+            this.btnRefresh.TabIndex = 8;
+            this.btnRefresh.Text = "Refresh Order List";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BackgroundImage = global::NorthwindUI.Properties.Resources.OceanBackground;
+            this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1587, 761);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.fillToolStrip);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.AllOrders);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnUpdate);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -639,7 +662,7 @@ namespace NorthwindUI
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.BindingSource custOrderHistBindingSource;
         private NorthwindDataSet northwindDataSet;
         private NorthwindDataSetTableAdapters.CustOrderHistTableAdapter custOrderHistTableAdapter;
@@ -687,6 +710,8 @@ namespace NorthwindUI
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn discountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExtendedPrice;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 

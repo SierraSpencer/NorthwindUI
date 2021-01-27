@@ -30,47 +30,48 @@ namespace NorthwindUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.lblOrder = new System.Windows.Forms.Label();
             this.lblCustomer = new System.Windows.Forms.Label();
             this.cboCustomer = new System.Windows.Forms.ComboBox();
+            this.customerListBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.northwindDataSet10 = new NorthwindUI.NorthwindDataSet10();
             this.northwindDataSet9 = new NorthwindUI.NorthwindDataSet9();
             this.customerListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerListTableAdapter = new NorthwindUI.NorthwindDataSet9TableAdapters.CustomerListTableAdapter();
-            this.northwindDataSet10 = new NorthwindUI.NorthwindDataSet10();
-            this.customerListBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.customerListTableAdapter1 = new NorthwindUI.NorthwindDataSet10TableAdapters.CustomerListTableAdapter();
             this.label3 = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblProducts = new System.Windows.Forms.Label();
             this.cboProductSelection = new System.Windows.Forms.ComboBox();
+            this.productListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.northwindDataSet11 = new NorthwindUI.NorthwindDataSet11();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
-            this.northwindDataSet11 = new NorthwindUI.NorthwindDataSet11();
-            this.productListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productListTableAdapter = new NorthwindUI.NorthwindDataSet11TableAdapters.ProductListTableAdapter();
             this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productListTableAdapter = new NorthwindUI.NorthwindDataSet11TableAdapters.ProductListTableAdapter();
             this.btnSave = new System.Windows.Forms.Button();
+            this.lblOrderNumber = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.customerListBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerListBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Salmon;
+            this.label1.BackColor = System.Drawing.Color.LightCoral;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(160, 55);
             this.label1.Name = "label1";
@@ -91,7 +92,7 @@ namespace NorthwindUI
             // lblCustomer
             // 
             this.lblCustomer.AutoSize = true;
-            this.lblCustomer.BackColor = System.Drawing.Color.Salmon;
+            this.lblCustomer.BackColor = System.Drawing.Color.LightCoral;
             this.lblCustomer.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomer.Location = new System.Drawing.Point(160, 119);
             this.lblCustomer.Name = "lblCustomer";
@@ -110,6 +111,16 @@ namespace NorthwindUI
             this.cboCustomer.TabIndex = 5;
             this.cboCustomer.ValueMember = "CustomerID";
             // 
+            // customerListBindingSource1
+            // 
+            this.customerListBindingSource1.DataMember = "CustomerList";
+            this.customerListBindingSource1.DataSource = this.northwindDataSet10;
+            // 
+            // northwindDataSet10
+            // 
+            this.northwindDataSet10.DataSetName = "NorthwindDataSet10";
+            this.northwindDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // northwindDataSet9
             // 
             this.northwindDataSet9.DataSetName = "NorthwindDataSet9";
@@ -124,16 +135,6 @@ namespace NorthwindUI
             // 
             this.customerListTableAdapter.ClearBeforeFill = true;
             // 
-            // northwindDataSet10
-            // 
-            this.northwindDataSet10.DataSetName = "NorthwindDataSet10";
-            this.northwindDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerListBindingSource1
-            // 
-            this.customerListBindingSource1.DataMember = "CustomerList";
-            this.customerListBindingSource1.DataSource = this.northwindDataSet10;
-            // 
             // customerListTableAdapter1
             // 
             this.customerListTableAdapter1.ClearBeforeFill = true;
@@ -141,7 +142,7 @@ namespace NorthwindUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Salmon;
+            this.label3.BackColor = System.Drawing.Color.LightCoral;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(160, 84);
             this.label3.Name = "label3";
@@ -162,7 +163,7 @@ namespace NorthwindUI
             // lblProducts
             // 
             this.lblProducts.AutoSize = true;
-            this.lblProducts.BackColor = System.Drawing.Color.Salmon;
+            this.lblProducts.BackColor = System.Drawing.Color.LightCoral;
             this.lblProducts.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProducts.Location = new System.Drawing.Point(163, 171);
             this.lblProducts.Name = "lblProducts";
@@ -181,6 +182,16 @@ namespace NorthwindUI
             this.cboProductSelection.TabIndex = 9;
             this.cboProductSelection.ValueMember = "ProductID";
             // 
+            // productListBindingSource
+            // 
+            this.productListBindingSource.DataMember = "ProductList";
+            this.productListBindingSource.DataSource = this.northwindDataSet11;
+            // 
+            // northwindDataSet11
+            // 
+            this.northwindDataSet11.DataSetName = "NorthwindDataSet11";
+            this.northwindDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.Color.MistyRose;
@@ -195,17 +206,20 @@ namespace NorthwindUI
             // dgvProducts
             // 
             this.dgvProducts.AllowUserToAddRows = false;
+            this.dgvProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvProducts.BackgroundColor = System.Drawing.Color.Salmon;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvProducts.BackgroundColor = System.Drawing.Color.LightCoral;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductID,
@@ -213,57 +227,47 @@ namespace NorthwindUI
             this.ProductPrice});
             this.dgvProducts.Location = new System.Drawing.Point(163, 214);
             this.dgvProducts.Name = "dgvProducts";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvProducts.RowHeadersVisible = false;
             this.dgvProducts.Size = new System.Drawing.Size(599, 113);
             this.dgvProducts.TabIndex = 11;
             // 
-            // northwindDataSet11
-            // 
-            this.northwindDataSet11.DataSetName = "NorthwindDataSet11";
-            this.northwindDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productListBindingSource
-            // 
-            this.productListBindingSource.DataMember = "ProductList";
-            this.productListBindingSource.DataSource = this.northwindDataSet11;
-            // 
-            // productListTableAdapter
-            // 
-            this.productListTableAdapter.ClearBeforeFill = true;
-            // 
             // ProductID
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ProductID.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ProductID.DefaultCellStyle = dataGridViewCellStyle2;
             this.ProductID.HeaderText = "Product ID";
             this.ProductID.Name = "ProductID";
             this.ProductID.Width = 141;
             // 
             // ProductName
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.ProductName.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.ProductName.DefaultCellStyle = dataGridViewCellStyle3;
             this.ProductName.HeaderText = "Product Name";
             this.ProductName.Name = "ProductName";
             this.ProductName.Width = 168;
             // 
             // ProductPrice
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Format = "N2";
-            dataGridViewCellStyle14.NullValue = null;
-            this.ProductPrice.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.ProductPrice.DefaultCellStyle = dataGridViewCellStyle4;
             this.ProductPrice.HeaderText = "Product Price";
             this.ProductPrice.Name = "ProductPrice";
             this.ProductPrice.Width = 165;
+            // 
+            // productListTableAdapter
+            // 
+            this.productListTableAdapter.ClearBeforeFill = true;
             // 
             // btnSave
             // 
@@ -277,13 +281,21 @@ namespace NorthwindUI
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // lblOrderNumber
+            // 
+            this.lblOrderNumber.AutoSize = true;
+            this.lblOrderNumber.Location = new System.Drawing.Point(299, 55);
+            this.lblOrderNumber.Name = "lblOrderNumber";
+            this.lblOrderNumber.Size = new System.Drawing.Size(0, 13);
+            this.lblOrderNumber.TabIndex = 13;
+            // 
             // NewOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BackgroundImage = global::NorthwindUI.Properties.Resources.SoT;
+            this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(861, 466);
+            this.Controls.Add(this.lblOrderNumber);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dgvProducts);
             this.Controls.Add(this.btnAdd);
@@ -297,14 +309,15 @@ namespace NorthwindUI
             this.Controls.Add(this.label1);
             this.Name = "NewOrder";
             this.Text = "NewOrder";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.NewOrder_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.customerListBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerListBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,5 +348,6 @@ namespace NorthwindUI
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductPrice;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblOrderNumber;
     }
 }
