@@ -53,6 +53,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageProducts.Designer.cs">
+      <DependentUpon>ManageProducts.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NorthwindDataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindDataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NorthwindDataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindDataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NorthwindDataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindDataSet14.xsd</DependentUpon>
     </Compile>
     <Compile Include="NorthwindDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -123,6 +144,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageProducts.resx">
+      <DependentUpon>ManageProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewOrder.resx">
       <DependentUpon>NewOrder.cs</DependentUpon>
@@ -180,6 +204,39 @@
     </None>
     <None Include="NorthwindDataSet11.xss">
       <DependentUpon>NorthwindDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="NorthwindDataSet12.xsc">
+      <DependentUpon>NorthwindDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="NorthwindDataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NorthwindDataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NorthwindDataSet12.xss">
+      <DependentUpon>NorthwindDataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="NorthwindDataSet13.xsc">
+      <DependentUpon>NorthwindDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="NorthwindDataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NorthwindDataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NorthwindDataSet13.xss">
+      <DependentUpon>NorthwindDataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="NorthwindDataSet14.xsc">
+      <DependentUpon>NorthwindDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="NorthwindDataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NorthwindDataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NorthwindDataSet14.xss">
+      <DependentUpon>NorthwindDataSet14.xsd</DependentUpon>
     </None>
     <None Include="NorthwindDataSet2.xsc">
       <DependentUpon>NorthwindDataSet2.xsd</DependentUpon>

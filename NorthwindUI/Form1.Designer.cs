@@ -80,10 +80,6 @@ namespace NorthwindUI
             this.custOrdersDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.custOrdersDetailTableAdapter = new NorthwindUI.NorthwindDataSet5TableAdapters.CustOrdersDetailTableAdapter();
             this.tableAdapterManager = new NorthwindUI.NorthwindDataSet5TableAdapters.TableAdapterManager();
-            this.fillToolStrip = new System.Windows.Forms.ToolStrip();
-            this.orderIDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.orderIDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,6 +90,13 @@ namespace NorthwindUI
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.orderIDToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.orderIDToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.fillToolStrip = new System.Windows.Forms.ToolStrip();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnProductListForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.custOrderHistBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet1)).BeginInit();
@@ -108,19 +111,22 @@ namespace NorthwindUI
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.custOrdersDetailBindingSource)).BeginInit();
-            this.fillToolStrip.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
+            this.fillToolStrip.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnUpdate
             // 
+            this.btnUpdate.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnUpdate.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.Location = new System.Drawing.Point(775, 649);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(108, 23);
             this.btnUpdate.TabIndex = 0;
             this.btnUpdate.Text = "Update Order";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.Update_Click);
             // 
             // northwindDataSet
@@ -157,10 +163,10 @@ namespace NorthwindUI
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.PowderBlue;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Format = "N2";
             dataGridViewCellStyle1.NullValue = null;
@@ -177,7 +183,7 @@ namespace NorthwindUI
             this.dataGridView1.DataSource = this.allOrdersBindingSource2;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle5.NullValue = null;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
@@ -185,13 +191,13 @@ namespace NorthwindUI
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.Location = new System.Drawing.Point(65, 108);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 108);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Modern No. 20", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -199,7 +205,7 @@ namespace NorthwindUI
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(602, 511);
+            this.dataGridView1.Size = new System.Drawing.Size(684, 511);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -210,7 +216,7 @@ namespace NorthwindUI
             this.orderIDDataGridViewTextBoxColumn.HeaderText = "Order ID";
             this.orderIDDataGridViewTextBoxColumn.Name = "orderIDDataGridViewTextBoxColumn";
             this.orderIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.orderIDDataGridViewTextBoxColumn.Width = 101;
+            this.orderIDDataGridViewTextBoxColumn.Width = 119;
             // 
             // companyNameDataGridViewTextBoxColumn
             // 
@@ -221,7 +227,7 @@ namespace NorthwindUI
             this.companyNameDataGridViewTextBoxColumn.HeaderText = "Company Name";
             this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
             this.companyNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.companyNameDataGridViewTextBoxColumn.Width = 145;
+            this.companyNameDataGridViewTextBoxColumn.Width = 184;
             // 
             // contactNameDataGridViewTextBoxColumn
             // 
@@ -232,7 +238,7 @@ namespace NorthwindUI
             this.contactNameDataGridViewTextBoxColumn.HeaderText = "Contact Name";
             this.contactNameDataGridViewTextBoxColumn.Name = "contactNameDataGridViewTextBoxColumn";
             this.contactNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.contactNameDataGridViewTextBoxColumn.Width = 134;
+            this.contactNameDataGridViewTextBoxColumn.Width = 167;
             // 
             // TotalPrice
             // 
@@ -245,7 +251,7 @@ namespace NorthwindUI
             this.TotalPrice.HeaderText = "Total Price";
             this.TotalPrice.Name = "TotalPrice";
             this.TotalPrice.ReadOnly = true;
-            this.TotalPrice.Width = 116;
+            this.TotalPrice.Width = 139;
             // 
             // allOrdersBindingSource2
             // 
@@ -260,12 +266,12 @@ namespace NorthwindUI
             // AllOrders
             // 
             this.AllOrders.AutoSize = true;
-            this.AllOrders.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.AllOrders.Font = new System.Drawing.Font("Modern No. 20", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AllOrders.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.AllOrders.Location = new System.Drawing.Point(679, 45);
+            this.AllOrders.BackColor = System.Drawing.Color.SkyBlue;
+            this.AllOrders.Font = new System.Drawing.Font("Mongolian Baiti", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AllOrders.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.AllOrders.Location = new System.Drawing.Point(606, 16);
             this.AllOrders.Name = "AllOrders";
-            this.AllOrders.Size = new System.Drawing.Size(307, 38);
+            this.AllOrders.Size = new System.Drawing.Size(304, 40);
             this.AllOrders.TabIndex = 2;
             this.AllOrders.Text = "Northwind Orders";
             this.AllOrders.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -300,7 +306,7 @@ namespace NorthwindUI
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
             this.groupBox1.Controls.Add(this.lblContactName);
             this.groupBox1.Controls.Add(this.lblCompanyName);
             this.groupBox1.Controls.Add(this.lblShippedDate);
@@ -311,7 +317,7 @@ namespace NorthwindUI
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.lblOrderNumber);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(686, 108);
+            this.groupBox1.Location = new System.Drawing.Point(713, 108);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(862, 218);
             this.groupBox1.TabIndex = 3;
@@ -320,10 +326,10 @@ namespace NorthwindUI
             // lblContactName
             // 
             this.lblContactName.AutoSize = true;
-            this.lblContactName.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContactName.Location = new System.Drawing.Point(630, 110);
+            this.lblContactName.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContactName.Location = new System.Drawing.Point(718, 112);
             this.lblContactName.Name = "lblContactName";
-            this.lblContactName.Size = new System.Drawing.Size(34, 18);
+            this.lblContactName.Size = new System.Drawing.Size(35, 16);
             this.lblContactName.TabIndex = 9;
             this.lblContactName.Text = "Bob";
             this.lblContactName.Click += new System.EventHandler(this.lblContactName_Click);
@@ -331,20 +337,20 @@ namespace NorthwindUI
             // lblCompanyName
             // 
             this.lblCompanyName.AutoSize = true;
-            this.lblCompanyName.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCompanyName.Location = new System.Drawing.Point(10, 110);
+            this.lblCompanyName.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompanyName.Location = new System.Drawing.Point(29, 112);
             this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(70, 18);
+            this.lblCompanyName.Size = new System.Drawing.Size(70, 16);
             this.lblCompanyName.TabIndex = 8;
             this.lblCompanyName.Text = "The Store";
             // 
             // lblShippedDate
             // 
             this.lblShippedDate.AutoSize = true;
-            this.lblShippedDate.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblShippedDate.Location = new System.Drawing.Point(646, 42);
+            this.lblShippedDate.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShippedDate.Location = new System.Drawing.Point(733, 44);
             this.lblShippedDate.Name = "lblShippedDate";
-            this.lblShippedDate.Size = new System.Drawing.Size(70, 18);
+            this.lblShippedDate.Size = new System.Drawing.Size(80, 16);
             this.lblShippedDate.TabIndex = 7;
             this.lblShippedDate.Text = "01/01/2020";
             this.lblShippedDate.Click += new System.EventHandler(this.label6_Click);
@@ -352,50 +358,50 @@ namespace NorthwindUI
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(630, 83);
+            this.label5.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(681, 83);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 18);
+            this.label5.Size = new System.Drawing.Size(159, 23);
             this.label5.TabIndex = 6;
             this.label5.Text = "Customer Name";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 83);
+            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(18, 83);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 18);
+            this.label4.Size = new System.Drawing.Size(159, 23);
             this.label4.TabIndex = 5;
             this.label4.Text = "Company Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(630, 16);
+            this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(703, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 18);
+            this.label2.Size = new System.Drawing.Size(137, 23);
             this.label2.TabIndex = 4;
             this.label2.Text = "Shipped Date";
             // 
             // lblOrderDate
             // 
             this.lblOrderDate.AutoSize = true;
-            this.lblOrderDate.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderDate.Location = new System.Drawing.Point(366, 42);
+            this.lblOrderDate.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderDate.Location = new System.Drawing.Point(403, 44);
             this.lblOrderDate.Name = "lblOrderDate";
-            this.lblOrderDate.Size = new System.Drawing.Size(70, 18);
+            this.lblOrderDate.Size = new System.Drawing.Size(80, 16);
             this.lblOrderDate.TabIndex = 3;
             this.lblOrderDate.Text = "01/01/2020";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(357, 16);
+            this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(387, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 18);
+            this.label3.Size = new System.Drawing.Size(113, 23);
             this.label3.TabIndex = 2;
             this.label3.Text = "Order Date";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -403,20 +409,20 @@ namespace NorthwindUI
             // lblOrderNumber
             // 
             this.lblOrderNumber.AutoSize = true;
-            this.lblOrderNumber.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOrderNumber.Location = new System.Drawing.Point(37, 42);
+            this.lblOrderNumber.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderNumber.Location = new System.Drawing.Point(60, 44);
             this.lblOrderNumber.Name = "lblOrderNumber";
-            this.lblOrderNumber.Size = new System.Drawing.Size(43, 18);
+            this.lblOrderNumber.Size = new System.Drawing.Size(48, 16);
             this.lblOrderNumber.TabIndex = 1;
             this.lblOrderNumber.Text = "10462";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(18, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 18);
+            this.label1.Size = new System.Drawing.Size(145, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Order Number";
             // 
@@ -440,44 +446,11 @@ namespace NorthwindUI
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.UpdateOrder = NorthwindUI.NorthwindDataSet5TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // fillToolStrip
-            // 
-            this.fillToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.fillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.orderIDToolStripLabel,
-            this.orderIDToolStripTextBox,
-            this.fillToolStripButton});
-            this.fillToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillToolStrip.Name = "fillToolStrip";
-            this.fillToolStrip.Size = new System.Drawing.Size(1587, 25);
-            this.fillToolStrip.TabIndex = 4;
-            this.fillToolStrip.Text = "fillToolStrip";
-            // 
-            // orderIDToolStripLabel
-            // 
-            this.orderIDToolStripLabel.Name = "orderIDToolStripLabel";
-            this.orderIDToolStripLabel.Size = new System.Drawing.Size(51, 22);
-            this.orderIDToolStripLabel.Text = "OrderID:";
-            // 
-            // orderIDToolStripTextBox
-            // 
-            this.orderIDToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.orderIDToolStripTextBox.Name = "orderIDToolStripTextBox";
-            this.orderIDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // fillToolStripButton
-            // 
-            this.fillToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillToolStripButton.Name = "fillToolStripButton";
-            this.fillToolStripButton.Size = new System.Drawing.Size(26, 22);
-            this.fillToolStripButton.Text = "Fill";
-            this.fillToolStripButton.Click += new System.EventHandler(this.fillToolStripButton_Click);
-            // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox2.BackColor = System.Drawing.Color.SkyBlue;
             this.groupBox2.Controls.Add(this.dgvProducts);
-            this.groupBox2.Location = new System.Drawing.Point(686, 360);
+            this.groupBox2.Location = new System.Drawing.Point(713, 360);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(862, 259);
             this.groupBox2.TabIndex = 5;
@@ -489,14 +462,14 @@ namespace NorthwindUI
             this.dgvProducts.AutoGenerateColumns = false;
             this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvProducts.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dgvProducts.BackgroundColor = System.Drawing.Color.SkyBlue;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -508,10 +481,10 @@ namespace NorthwindUI
             this.dgvProducts.DataSource = this.custOrdersDetailBindingSource;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProducts.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvProducts.Location = new System.Drawing.Point(6, 19);
@@ -519,9 +492,9 @@ namespace NorthwindUI
             this.dgvProducts.ReadOnly = true;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
@@ -551,7 +524,7 @@ namespace NorthwindUI
             this.unitPriceDataGridViewTextBoxColumn.HeaderText = "Unit Price";
             this.unitPriceDataGridViewTextBoxColumn.Name = "unitPriceDataGridViewTextBoxColumn";
             this.unitPriceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.unitPriceDataGridViewTextBoxColumn.Width = 135;
+            this.unitPriceDataGridViewTextBoxColumn.Width = 131;
             // 
             // quantityDataGridViewTextBoxColumn
             // 
@@ -562,7 +535,7 @@ namespace NorthwindUI
             this.quantityDataGridViewTextBoxColumn.HeaderText = "Quantity";
             this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.quantityDataGridViewTextBoxColumn.Width = 117;
+            this.quantityDataGridViewTextBoxColumn.Width = 118;
             // 
             // discountDataGridViewTextBoxColumn
             // 
@@ -573,7 +546,7 @@ namespace NorthwindUI
             this.discountDataGridViewTextBoxColumn.HeaderText = "Discount";
             this.discountDataGridViewTextBoxColumn.Name = "discountDataGridViewTextBoxColumn";
             this.discountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.discountDataGridViewTextBoxColumn.Width = 117;
+            this.discountDataGridViewTextBoxColumn.Width = 120;
             // 
             // ExtendedPrice
             // 
@@ -586,51 +559,123 @@ namespace NorthwindUI
             this.ExtendedPrice.HeaderText = "Total Price";
             this.ExtendedPrice.Name = "ExtendedPrice";
             this.ExtendedPrice.ReadOnly = true;
-            this.ExtendedPrice.Width = 142;
+            this.ExtendedPrice.Width = 139;
             // 
             // btnCreate
             // 
+            this.btnCreate.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnCreate.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.Location = new System.Drawing.Point(1359, 649);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(129, 23);
+            this.btnCreate.Size = new System.Drawing.Size(140, 23);
             this.btnCreate.TabIndex = 6;
             this.btnCreate.Text = "Create New Order";
-            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.UseVisualStyleBackColor = false;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnDelete.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(1094, 649);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(101, 23);
             this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Delete Order";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnRefresh
             // 
+            this.btnRefresh.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnRefresh.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.Location = new System.Drawing.Point(286, 649);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(133, 23);
             this.btnRefresh.TabIndex = 8;
             this.btnRefresh.Text = "Refresh Order List";
-            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // orderIDToolStripLabel
+            // 
+            this.orderIDToolStripLabel.Name = "orderIDToolStripLabel";
+            this.orderIDToolStripLabel.Size = new System.Drawing.Size(51, 22);
+            this.orderIDToolStripLabel.Text = "OrderID:";
+            // 
+            // orderIDToolStripTextBox
+            // 
+            this.orderIDToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.orderIDToolStripTextBox.Name = "orderIDToolStripTextBox";
+            this.orderIDToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // fillToolStripButton
+            // 
+            this.fillToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillToolStripButton.Name = "fillToolStripButton";
+            this.fillToolStripButton.Size = new System.Drawing.Size(26, 22);
+            this.fillToolStripButton.Text = "Fill";
+            this.fillToolStripButton.Click += new System.EventHandler(this.fillToolStripButton_Click);
+            // 
+            // fillToolStrip
+            // 
+            this.fillToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.fillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.orderIDToolStripLabel,
+            this.orderIDToolStripTextBox,
+            this.fillToolStripButton});
+            this.fillToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillToolStrip.Name = "fillToolStrip";
+            this.fillToolStrip.Size = new System.Drawing.Size(1587, 25);
+            this.fillToolStrip.TabIndex = 4;
+            this.fillToolStrip.Text = "fillToolStrip";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.SkyBlue;
+            this.groupBox3.Controls.Add(this.AllOrders);
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1587, 79);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.BackColor = System.Drawing.Color.SkyBlue;
+            this.groupBox4.Location = new System.Drawing.Point(0, 687);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(1587, 79);
+            this.groupBox4.TabIndex = 10;
+            this.groupBox4.TabStop = false;
+            // 
+            // btnProductListForm
+            // 
+            this.btnProductListForm.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnProductListForm.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProductListForm.Location = new System.Drawing.Point(13, 649);
+            this.btnProductListForm.Name = "btnProductListForm";
+            this.btnProductListForm.Size = new System.Drawing.Size(127, 23);
+            this.btnProductListForm.TabIndex = 11;
+            this.btnProductListForm.Text = "Manage Products";
+            this.btnProductListForm.UseVisualStyleBackColor = false;
+            this.btnProductListForm.Click += new System.EventHandler(this.btnProductListForm_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SteelBlue;
+            this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(1587, 761);
+            this.Controls.Add(this.btnProductListForm);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.fillToolStrip);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.AllOrders);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnUpdate);
             this.Name = "Form1";
@@ -651,10 +696,12 @@ namespace NorthwindUI
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.custOrdersDetailBindingSource)).EndInit();
-            this.fillToolStrip.ResumeLayout(false);
-            this.fillToolStrip.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
+            this.fillToolStrip.ResumeLayout(false);
+            this.fillToolStrip.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -690,10 +737,6 @@ namespace NorthwindUI
         private System.Windows.Forms.BindingSource custOrdersDetailBindingSource;
         private NorthwindDataSet5TableAdapters.CustOrdersDetailTableAdapter custOrdersDetailTableAdapter;
         private NorthwindDataSet5TableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.ToolStrip fillToolStrip;
-        private System.Windows.Forms.ToolStripLabel orderIDToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox orderIDToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fillToolStripButton;
         private System.Windows.Forms.Label lblOrderDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
@@ -712,6 +755,13 @@ namespace NorthwindUI
         private System.Windows.Forms.DataGridViewTextBoxColumn ExtendedPrice;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.ToolStripLabel orderIDToolStripLabel;
+        private System.Windows.Forms.ToolStripTextBox orderIDToolStripTextBox;
+        private System.Windows.Forms.ToolStripButton fillToolStripButton;
+        private System.Windows.Forms.ToolStrip fillToolStrip;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnProductListForm;
     }
 }
 

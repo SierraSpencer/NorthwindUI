@@ -15,6 +15,7 @@ namespace NorthwindUI
         public Form1()
         {
             InitializeComponent();
+            this.Text = "Main Screen";
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -36,25 +37,12 @@ namespace NorthwindUI
             
             
             lblOrderNumber.Text = orderId.ToString();
-            lblOrderDate.Text = orderDetail.OrderDate.ToString("dd/MM/yyyy");
-            lblShippedDate.Text = orderDetail.ShippedDate.ToString("dd/MM/yyyy");
+            lblOrderDate.Text = orderDetail.OrderDate.ToString("MM/dd/yyyy");
+            lblShippedDate.Text = orderDetail.ShippedDate.ToString("MM/dd/yyyy");
             lblCompanyName.Text = orderDetail.CompanyName.ToString();
             lblContactName.Text = orderDetail.ContactName.ToString();
-            //test
 
-            //custOrderHistBindingSource.ResetBindings.
-            //lblProductName.Text = orderDetail.ProductName;
-
-            dgvProducts.DataSource = dbMethods.ProductsInOrder(orderId);
-            
-
-            //if ()
-            //this.custOrdersDetailTableAdapter.Fill(this.northwindDataSet5.CustOrdersDetail, (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value);
-            //this.custOrdersDetailTableAdapter.Fill(this.northwindDataSet5.CustOrdersDetail, (int) dataGridView1.SelectedRows[0].Cells[0].Value);
-
-            //Application.DoEvents();
-
-            //this.northwindDataSet5.CustOrdersDetail.Rows[0].ItemArray[0].ToString();
+            dgvProducts.DataSource = dbMethods.ProductsInOrder(orderId); 
         }
 
         private void fillToolStripButton_Click(object sender, EventArgs e)
@@ -89,7 +77,7 @@ namespace NorthwindUI
         {
             NewOrder newOrder = new NewOrder();
             newOrder.SetMainForm(this);
-            newOrder.ShowDialog();
+            newOrder.Show();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -134,8 +122,8 @@ namespace NorthwindUI
             newOrder.UpdateOrder(orderId);
             newOrder.SetMainForm(this);
             //newOrder.TopMost = true;
-            newOrder.ShowDialog(this);
-          
+            //newOrder.Show(this);
+            newOrder.Show();
 
         }
 
@@ -147,6 +135,13 @@ namespace NorthwindUI
         public void RefreshOrders()
         {
             this.allOrdersTableAdapter2.Fill(this.northwindDataSet4.AllOrders);
+        }
+
+        private void btnProductListForm_Click(object sender, EventArgs e)
+        {
+            ManageProducts manageProducts = new ManageProducts();
+            manageProducts.SetMainForm(this);
+            manageProducts.Show();
         }
     }
 }

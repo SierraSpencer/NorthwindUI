@@ -21,6 +21,7 @@ namespace NorthwindUI
         {
             InitializeComponent();
             Products = new DataTable();
+            this.Text = "New Order";
         }
 
         public void UpdateOrder(int orderId)
@@ -41,9 +42,12 @@ namespace NorthwindUI
             this.customerListTableAdapter1.Fill(this.northwindDataSet10.CustomerList);
             // TODO: This line of code loads data into the 'northwindDataSet9.CustomerList' table. You can move, or remove it, as needed.
             this.customerListTableAdapter.Fill(this.northwindDataSet9.CustomerList);
-            lblDate.Text = DateTime.Now.ToString();
+
+            lblDate.Text = DateTime.Now.ToString("MM/dd/yyyy");
+
             if (_updateOrderId > -1)
             {
+                this.Text = "Update Order";
                 cboCustomer.Enabled = false;
 
                 //populate details and products
@@ -52,28 +56,15 @@ namespace NorthwindUI
                 DBMethods.OrderDetailType orderDetail = dbMethods.OrderDetails(_updateOrderId);
                 cboCustomer.Text = orderDetail.CompanyName.ToString();
 
-                //cboProductSelection.Text = orderDetail.ProductName.ToString();
-                //test
-
-                //custOrderHistBindingSource.ResetBindings.
-                //lblProductName.Text = orderDetail.ProductName;
-
-                //dgvProducts.DataSource = dbMethods.OrderDetailReader(_updateOrderId);
                 DataTable productsInOrder = dbMethods.ProductsInOrder(_updateOrderId);
-
-                //DataTable tempDT = new DataTable();
-                //tempDT = productsInOrder.DefaultView.ToTable(true, "ProductID", "ProductName", "ExtendedPrice");
-                //dgvProducts.DataSource = tempDT;
 
                 lblOrderNumber.Text = _updateOrderId.ToString();
 
                 foreach (DataRow row in productsInOrder.Rows)
                 {
-                    this.dgvProducts.Rows.Add(row["ProductID"], row["ProductName"], row["UnitPrice"]);
+                    this.dgvProducts.Rows.Add(row["ProductID"], row["ProductName"], row["UnitPrice"], "Existing");
                     //add product to dgvProducts
                 }
-
-
             }
         }
 
@@ -88,27 +79,11 @@ namespace NorthwindUI
 
             DataRow productDetails = dbMethods.GetProductDetails((int)cboProductSelection.SelectedValue);
 
-            this.dgvProducts.Rows.Add(productDetails[0], productDetails[1], productDetails[2]);//, productDetails[3]);
-           // DataGridViewRow row = (DataGridViewRow)dgvProducts.Rows[0].Clone();
-
-            //for (int i = 0; i < 3; i++)
-            //{
-            //    row.Cells[i].Value = productDetails[i];
-            //}
-
-            //dgvProducts.Rows.Add(row);
+            this.dgvProducts.Rows.Add(productDetails[0], productDetails[1], productDetails[2], "New");//, productDetails[3]);
 
             string selectedPruduct = cboCustomer.Text;
             cboCustomer.DataSource = null;
             cboCustomer.Text = selectedPruduct;
-            
-
-            // Products.Rows.Add(productDetails);
-            //Products.ImportRow(productDetails);
-            //dgvProducts.DataSource = Products;
-            //addproducttogrid
-
-
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -128,7 +103,17 @@ namespace NorthwindUI
 
         private void UpdateOrder(DBMethods dbMethods)
         {
-            throw new NotImplementedException();
+            //add new products to order & ignore existing orders
+            //InitializeComponent();
+           //this.Text = "Update Order";
+           
+            foreach (DataGridViewRow row in dgvProducts.Rows)
+            {
+                if (row.Cells[3].Value.ToString() == "New")
+                {
+                    dbMethods.AddProductToOrder(_updateOrderId, (int)row.Cells[0].Value, (decimal)row.Cells[2].Value);
+                }
+            }
         }
 
         private void CreateOrder(DBMethods dbMethods)
@@ -142,6 +127,44 @@ namespace NorthwindUI
                 dbMethods.AddProductToOrder(orderId, (int)row.Cells[0].Value, (decimal)row.Cells[2].Value);
             }
             //add products to order
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteRow_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = dgvProducts.SelectedRows[0];
+
+            var confirmResult = MessageBox.Show("Are you sure to delete this product?", "Confirm Delete", MessageBoxButtons.YesNo);
+
+            if (confirmResult == DialogResult.Yes)
+            {
+                //get selected productId
+                DBMethods dbMethods = new DBMethods();
+                int productId = (int)selectedRow.Cells[0].Value;
+
+                //excute sp to delete product
+                dbMethods.DeleteProductsFromOrder(productId, _updateOrderId);
+
+                //clears rows
+                dgvProducts.DataSource = null;
+
+                dgvProducts.Rows.Clear();
+
+                //refreshes product list
+                DataTable productsInOrder = dbMethods.ProductsInOrder(_updateOrderId);
+
+                foreach (DataRow row in productsInOrder.Rows)
+                {
+                    this.dgvProducts.Rows.Add(row["ProductID"], row["ProductName"], row["UnitPrice"], "Existing");
+                    //add product to dgvProducts
+                }
+            }
+            //refreshes main form
+            _theMainForm.RefreshOrders();
         }
     }
 }
