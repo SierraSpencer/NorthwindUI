@@ -325,7 +325,7 @@ namespace NorthwindUI
             }
         }
 
-        public static void AddProduct(int ProductID, string ProductName, string QuantityPerUnit, decimal UnitPrice, int UnitsInStock)
+        public static void AddProduct(string ProductName, string QuantityPerUnit, decimal UnitPrice, int UnitsInStock)
         {
             using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
             {
@@ -333,6 +333,29 @@ namespace NorthwindUI
 
                 // 1.  create a command object identifying the stored procedure
                 SqlCommand cmd = new SqlCommand("AddProduct", conn);
+
+                // 2. set the command object so it knows to execute a stored procedure
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                // 3. add parameter to command, which will be passed to the stored procedure
+                cmd.Parameters.Add(new SqlParameter("@ProductName", ProductName));
+                cmd.Parameters.Add(new SqlParameter("@QuantityPerUnit", QuantityPerUnit));
+                cmd.Parameters.Add(new SqlParameter("@UnitPrice", UnitPrice));
+                cmd.Parameters.Add(new SqlParameter("@UnitsInStock", UnitsInStock));
+
+                // execute the command
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public static void UpdateProduct(int ProductID, string ProductName, string QuantityPerUnit, decimal UnitPrice, int UnitsInStock)
+        {
+            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            {
+                conn.Open();
+
+                // 1.  create a command object identifying the stored procedure
+                SqlCommand cmd = new SqlCommand("UpdateProduct", conn);
 
                 // 2. set the command object so it knows to execute a stored procedure
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;

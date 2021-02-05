@@ -20,10 +20,10 @@ namespace NorthwindUI
             this.Text = "Manage Products";
         }
 
-        public void UpdateProduct(int productId)
-        {
-            _updateProductId = productId;
-        }
+        //public void UpdateProduct(int productId)
+        //{
+        //    _updateProductId = productId;
+        //}
 
         public void SetMainForm(Form1 theMainForm)
         {
@@ -71,6 +71,8 @@ namespace NorthwindUI
                 lblDiscontinued.Text = "No";
             }
 
+            _updateProductId = productId;
+
             lblUnitsOnOrder.Text = productDetail.UnitsOnOrder.ToString();
             lblUnitsInStock.Text = productDetail.UnitsInStock.ToString();
             lblQuantityPerUnit.Text = productDetail.QuantityPerUnit.ToString();
@@ -93,6 +95,7 @@ namespace NorthwindUI
 
         private void bntProductUpdate_Click(object sender, EventArgs e)
         {
+
             //show/hide textboxes
             lblDetails.Visible = false;
             lblUpdate.Visible = true;
@@ -111,18 +114,6 @@ namespace NorthwindUI
             txtPrice.Text = lblUnitPrice.Text;
         }
 
-        private void UpdateProduct()
-        {
-            //add new products to order & ignore existing orders
-            foreach (DataGridViewRow row in dgvProductList.Rows)
-            {
-                if (row.Cells[3].Value.ToString() == "New")
-                {
-                    DataLayer.AddProduct(_updateProductId, txtProductName.Text, txtQuantity.Text, int.Parse(txtPrice.Text), int.Parse(txtUnitsInStock.Text));
-                }
-            }
-        }
-
         private void btnSaveProduct_Click(object sender, EventArgs e)
         {
             if (_updateProductId == -1)
@@ -130,12 +121,22 @@ namespace NorthwindUI
                // DataRow addDetails = DataLayer.AllProducts();
                 //this.dgvProductList.Rows.Add(addDetails[0], addDetails[1], addDetails[2], addDetails[3], addDetails[4], "New");
 
-                DataLayer.AddProduct(_updateProductId, txtProductName.Text, txtQuantity.Text, int.Parse(txtPrice.Text), int.Parse(txtUnitsInStock.Text));
+                DataLayer.AddProduct(txtProductName.Text, txtQuantity.Text, int.Parse(txtPrice.Text), int.Parse(txtUnitsInStock.Text));
             }
             else
             {
                 //update Product
-                UpdateProduct();
+                DataLayer.UpdateProduct(_updateProductId, txtProductName.Text, txtQuantity.Text, int.Parse(txtPrice.Text), int.Parse(txtUnitsInStock.Text));
+                lblDetails.Visible = false;
+                lblUpdate.Visible = false;
+                lblCreateNewProduct.Visible = false;
+                txtProductName.Visible = false;
+                lblProductName.Visible = true;
+                txtQuantity.Visible = false;
+                txtUnitsInStock.Visible = false;
+                txtPrice.Visible = false;
+                btnSaveProduct.Visible = false;
+                btnCancel.Visible = false;
             }
             //refreshes List
             dgvProductList.DataSource = DataLayer.AllProducts();
