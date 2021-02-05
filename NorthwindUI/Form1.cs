@@ -31,9 +31,9 @@ namespace NorthwindUI
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DBMethods dbMethods = new DBMethods();
+            //DataLayer dbMethods = new DataLayer();
             int orderId = (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
-            DBMethods.OrderDetailType orderDetail = dbMethods.OrderDetails(orderId);
+            DataLayer.OrderDetailType orderDetail = DataLayer.OrderDetails(orderId);
             
             
             lblOrderNumber.Text = orderId.ToString();
@@ -42,7 +42,7 @@ namespace NorthwindUI
             lblCompanyName.Text = orderDetail.CompanyName.ToString();
             lblContactName.Text = orderDetail.ContactName.ToString();
 
-            dgvProducts.DataSource = dbMethods.ProductsInOrder(orderId); 
+            dgvProducts.DataSource = DataLayer.ProductsInOrder(orderId); 
         }
 
         private void fillToolStripButton_Click(object sender, EventArgs e)
@@ -96,11 +96,12 @@ namespace NorthwindUI
             {
                 // If 'Yes', do something here.
                 //get selected orderId
-                DBMethods dbMethods = new DBMethods();
+                //DataLayer dbMethods = new DataLayer();
+
                 int orderId = (int)selectedRow.Cells[0].Value;
 
                 //excute sp to delete order
-                dbMethods.DeleteOrder(orderId);
+                DataLayer.DeleteOrder(orderId);
 
                 //refresh grid
                 this.allOrdersTableAdapter2.Fill(this.northwindDataSet4.AllOrders);

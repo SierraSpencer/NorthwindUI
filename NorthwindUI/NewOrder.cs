@@ -51,12 +51,12 @@ namespace NorthwindUI
                 cboCustomer.Enabled = false;
 
                 //populate details and products
-                DBMethods dbMethods = new DBMethods();
+                //DataLayer dbMethods = new DataLayer();
 
-                DBMethods.OrderDetailType orderDetail = dbMethods.OrderDetails(_updateOrderId);
+                DataLayer.OrderDetailType orderDetail = DataLayer.OrderDetails(_updateOrderId);
                 cboCustomer.Text = orderDetail.CompanyName.ToString();
 
-                DataTable productsInOrder = dbMethods.ProductsInOrder(_updateOrderId);
+                DataTable productsInOrder = DataLayer.ProductsInOrder(_updateOrderId);
 
                 lblOrderNumber.Text = _updateOrderId.ToString();
 
@@ -75,33 +75,34 @@ namespace NorthwindUI
                 MessageBox.Show("Please select a product", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            DBMethods dbMethods = new DBMethods();
+           // DataLayer dbMethods = new DataLayer();
 
-            DataRow productDetails = dbMethods.GetProductDetails((int)cboProductSelection.SelectedValue);
+            DataRow productDetails = DataLayer.GetProductDetails((int)cboProductSelection.SelectedValue);
 
             this.dgvProducts.Rows.Add(productDetails[0], productDetails[1], productDetails[2], "New");//, productDetails[3]);
 
-            string selectedPruduct = cboCustomer.Text;
+            string selectedProduct = cboCustomer.Text;
             cboCustomer.DataSource = null;
-            cboCustomer.Text = selectedPruduct;
+            cboCustomer.Text = selectedProduct;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            DBMethods dbMethods = new DBMethods();
+            //DataLayer dbMethods = new DataLayer();
+
             if (_updateOrderId == -1)
             {
-                CreateOrder(dbMethods);
+                CreateOrder();
             }
             else
             {
                 //update order
-                UpdateOrder(dbMethods);
+                UpdateOrder();
             }
             _theMainForm.RefreshOrders();
         }
 
-        private void UpdateOrder(DBMethods dbMethods)
+        private void UpdateOrder()
         {
             //add new products to order & ignore existing orders
             //InitializeComponent();
@@ -111,20 +112,20 @@ namespace NorthwindUI
             {
                 if (row.Cells[3].Value.ToString() == "New")
                 {
-                    dbMethods.AddProductToOrder(_updateOrderId, (int)row.Cells[0].Value, (decimal)row.Cells[2].Value);
+                    DataLayer.AddProductToOrder(_updateOrderId, (int)row.Cells[0].Value, (decimal)row.Cells[2].Value);
                 }
             }
         }
 
-        private void CreateOrder(DBMethods dbMethods)
+        private void CreateOrder()
         {
-            int orderId = dbMethods.CreateNewOrder(cboCustomer.Text, 1, DateTime.Parse(lblDate.Text), DateTime.Now, DateTime.Now.AddDays(5));
+            int orderId = DataLayer.CreateNewOrder(cboCustomer.Text, 1, DateTime.Parse(lblDate.Text), DateTime.Now, DateTime.Now.AddDays(5));
 
             lblOrder.Text = orderId.ToString();
 
             foreach (DataGridViewRow row in dgvProducts.Rows)
             {
-                dbMethods.AddProductToOrder(orderId, (int)row.Cells[0].Value, (decimal)row.Cells[2].Value);
+                DataLayer.AddProductToOrder(orderId, (int)row.Cells[0].Value, (decimal)row.Cells[2].Value);
             }
             //add products to order
         }
@@ -143,11 +144,12 @@ namespace NorthwindUI
             if (confirmResult == DialogResult.Yes)
             {
                 //get selected productId
-                DBMethods dbMethods = new DBMethods();
+                //DataLayer dbMethods = new DataLayer();
+
                 int productId = (int)selectedRow.Cells[0].Value;
 
                 //excute sp to delete product
-                dbMethods.DeleteProductsFromOrder(productId, _updateOrderId);
+                DataLayer.DeleteProductsFromOrder(productId, _updateOrderId);
 
                 //clears rows
                 dgvProducts.DataSource = null;
@@ -155,7 +157,7 @@ namespace NorthwindUI
                 dgvProducts.Rows.Clear();
 
                 //refreshes product list
-                DataTable productsInOrder = dbMethods.ProductsInOrder(_updateOrderId);
+                DataTable productsInOrder = DataLayer.ProductsInOrder(_updateOrderId);
 
                 foreach (DataRow row in productsInOrder.Rows)
                 {
