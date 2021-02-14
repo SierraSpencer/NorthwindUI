@@ -75,7 +75,7 @@ namespace NorthwindUI
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            NewOrder newOrder = new NewOrder();
+            Admin newOrder = new Admin();
             newOrder.SetMainForm(this);
             newOrder.Show();
         }
@@ -115,7 +115,7 @@ namespace NorthwindUI
         private void Update_Click(object sender, EventArgs e)
         {
             //update
-            NewOrder newOrder = new NewOrder();
+            Admin newOrder = new Admin();
 
             DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
             int orderId = (int)selectedRow.Cells[0].Value;
@@ -143,6 +143,13 @@ namespace NorthwindUI
             ManageProducts manageProducts = new ManageProducts();
             manageProducts.SetMainForm(this);
             manageProducts.Show();
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            AdminPage adminPage = new AdminPage();
+            adminPage.SetMainForm(this);
+            adminPage.Show();
         }
     }
 }

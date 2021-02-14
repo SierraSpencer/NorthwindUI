@@ -97,6 +97,7 @@ namespace NorthwindUI
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnProductListForm = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.custOrderHistBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet1)).BeginInit();
@@ -633,6 +634,7 @@ namespace NorthwindUI
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.SkyBlue;
+            this.groupBox3.Controls.Add(this.btnAdmin);
             this.groupBox3.Controls.Add(this.AllOrders);
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
@@ -660,6 +662,18 @@ namespace NorthwindUI
             this.btnProductListForm.Text = "Manage Products";
             this.btnProductListForm.UseVisualStyleBackColor = false;
             this.btnProductListForm.Click += new System.EventHandler(this.btnProductListForm_Click);
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.btnAdmin.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.Location = new System.Drawing.Point(35, 32);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(75, 23);
+            this.btnAdmin.TabIndex = 3;
+            this.btnAdmin.Text = "Admin";
+            this.btnAdmin.UseVisualStyleBackColor = false;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // Form1
             // 
@@ -762,6 +776,7 @@ namespace NorthwindUI
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnProductListForm;
+        private System.Windows.Forms.Button btnAdmin;
     }
 }
 

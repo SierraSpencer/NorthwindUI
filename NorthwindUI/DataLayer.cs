@@ -371,5 +371,71 @@ namespace NorthwindUI
                 cmd.ExecuteNonQuery();
             }
         }
+
+        public static void AddUser(string UserId, string Password)
+        {
+            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            {
+                conn.Open();
+
+                // 1.  create a command object identifying the stored procedure
+                SqlCommand cmd = new SqlCommand("AddUser", conn);
+
+                // 2. set the command object so it knows to execute a stored procedure
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                // 3. add parameter to command, which will be passed to the stored procedure
+                cmd.Parameters.Add(new SqlParameter("@UserId", UserId));
+                cmd.Parameters.Add(new SqlParameter("@Password", Password));
+
+                // execute the command
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public static void DeleteUser(string UserId)
+        {
+
+            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            {
+                conn.Open();
+
+                // 1.  create a command object identifying the stored procedure
+                SqlCommand cmd = new SqlCommand("DeleteUser", conn);
+
+                // 2. set the command object so it knows to execute a stored procedure
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                // 3. add parameter to command, which will be passed to the stored procedure
+                cmd.Parameters.Add(new SqlParameter("@UserId", UserId));
+
+                // execute the command
+                cmd.ExecuteNonQuery();
+            }
+        }
+        public static bool IDConfirmation(string UserId, string Password)
+        {
+            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            {
+                conn.Open();
+
+                // 1.  create a command object identifying the stored procedure
+                SqlCommand cmd = new SqlCommand("IDConfirmation", conn);
+
+                // 2. set the command object so it knows to execute a stored procedure
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                // 3. add parameter to command, which will be passed to the stored procedure
+                cmd.Parameters.Add(new SqlParameter("@UserId", UserId));
+                cmd.Parameters.Add(new SqlParameter("@Password", Password));
+
+                // execute the command
+                using (SqlDataReader rdr = cmd.ExecuteReader())
+                {
+                    rdr.Read();
+                    return rdr.HasRows;
+                }
+            }
+        }
     }
 }

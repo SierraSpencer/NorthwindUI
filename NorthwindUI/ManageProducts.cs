@@ -138,6 +138,7 @@ namespace NorthwindUI
                 btnSaveProduct.Visible = false;
                 btnCancel.Visible = false;
             }
+
             //refreshes List
             dgvProductList.DataSource = DataLayer.AllProducts();
 

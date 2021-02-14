@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPage.Designer.cs">
+      <DependentUpon>AdminPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataLayer.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -100,6 +106,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet14.xsd</DependentUpon>
     </Compile>
+    <Compile Include="NorthwindDataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindDataSet15.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NorthwindDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -142,6 +153,15 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserAndPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserAndPassword.Designer.cs">
+      <DependentUpon>UserAndPassword.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminPage.resx">
+      <DependentUpon>AdminPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +181,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserAndPassword.resx">
+      <DependentUpon>UserAndPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="NorthwindDataSet.xsc">
       <DependentUpon>NorthwindDataSet.xsd</DependentUpon>
     </None>
@@ -237,6 +260,17 @@
     </None>
     <None Include="NorthwindDataSet14.xss">
       <DependentUpon>NorthwindDataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="NorthwindDataSet15.xsc">
+      <DependentUpon>NorthwindDataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="NorthwindDataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NorthwindDataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NorthwindDataSet15.xss">
+      <DependentUpon>NorthwindDataSet15.xsd</DependentUpon>
     </None>
     <None Include="NorthwindDataSet2.xsc">
       <DependentUpon>NorthwindDataSet2.xsd</DependentUpon>
