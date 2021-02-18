@@ -34,7 +34,8 @@ namespace NorthwindUI
         {
             // TODO: This line of code loads data into the 'northwindDataSet12.ProductList' table. You can move, or remove it, as needed.
             //gthis.productListTableAdapter.Fill(this.northwindDataSet12.ProductList);
-            dgvProductList.DataSource = DataLayer.AllProducts();
+            //dgvProductList.DataSource = DataLayerAPI.AllProducts();
+            dgvProductList.DataSource = DataLayerAPI.GetProducts();
 
             if (_updateProductId > -1)
             {

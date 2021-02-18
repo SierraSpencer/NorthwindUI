@@ -31,12 +31,12 @@ namespace NorthwindUI
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtUserId = new System.Windows.Forms.TextBox();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.lblAsk = new System.Windows.Forms.Label();
-            this.btnConfirm = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblAsk = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.txtUserId = new System.Windows.Forms.TextBox();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,23 +64,24 @@ namespace NorthwindUI
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // txtUserId
+            // txtPassword
             // 
-            this.txtUserId.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserId.Location = new System.Drawing.Point(193, 57);
-            this.txtUserId.Name = "txtUserId";
-            this.txtUserId.Size = new System.Drawing.Size(374, 29);
-            this.txtUserId.TabIndex = 1;
+            this.txtPassword.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(193, 137);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(374, 26);
+            this.txtPassword.TabIndex = 6;
             // 
-            // lblUsername
+            // lblAsk
             // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(28, 60);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(99, 20);
-            this.lblUsername.TabIndex = 2;
-            this.lblUsername.Text = "Username:";
+            this.lblAsk.AutoSize = true;
+            this.lblAsk.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAsk.Location = new System.Drawing.Point(280, 16);
+            this.lblAsk.Name = "lblAsk";
+            this.lblAsk.Size = new System.Drawing.Size(205, 14);
+            this.lblAsk.TabIndex = 4;
+            this.lblAsk.Text = "Please enter in your ID and Password";
             // 
             // lblPassword
             // 
@@ -92,15 +93,23 @@ namespace NorthwindUI
             this.lblPassword.TabIndex = 3;
             this.lblPassword.Text = "Password:";
             // 
-            // lblAsk
+            // lblUsername
             // 
-            this.lblAsk.AutoSize = true;
-            this.lblAsk.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAsk.Location = new System.Drawing.Point(280, 16);
-            this.lblAsk.Name = "lblAsk";
-            this.lblAsk.Size = new System.Drawing.Size(205, 14);
-            this.lblAsk.TabIndex = 4;
-            this.lblAsk.Text = "Please enter in your ID and Password";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(28, 60);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(99, 20);
+            this.lblUsername.TabIndex = 2;
+            this.lblUsername.Text = "Username:";
+            // 
+            // txtUserId
+            // 
+            this.txtUserId.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserId.Location = new System.Drawing.Point(193, 57);
+            this.txtUserId.Name = "txtUserId";
+            this.txtUserId.Size = new System.Drawing.Size(374, 29);
+            this.txtUserId.TabIndex = 1;
             // 
             // btnConfirm
             // 
@@ -114,15 +123,6 @@ namespace NorthwindUI
             this.btnConfirm.UseVisualStyleBackColor = false;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // txtPassword
-            // 
-            this.txtPassword.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(193, 137);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(374, 26);
-            this.txtPassword.TabIndex = 6;
-            // 
             // UserAndPassword
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,6 +134,7 @@ namespace NorthwindUI
             this.Controls.Add(this.lblTitle);
             this.Name = "UserAndPassword";
             this.Text = "UserAndPassword";
+            this.Load += new System.EventHandler(this.UserAndPassword_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

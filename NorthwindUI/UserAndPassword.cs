@@ -52,5 +52,11 @@ namespace NorthwindUI
                 }
             }
         }
+
+        private void UserAndPassword_Load(object sender, EventArgs e)
+        {
+            new Form1().Show();
+            this.Hide();
+        }
     }
 }
