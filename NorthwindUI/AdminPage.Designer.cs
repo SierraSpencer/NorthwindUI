@@ -45,15 +45,15 @@ namespace NorthwindUI
             this.lblUser = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblNewUser = new System.Windows.Forms.Label();
-            this.northwindDataSet15 = new NorthwindUI.NorthwindDataSet15();
+            //this.northwindDataSet15 = new NorthwindUI.NorthwindDataSet15();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.usersTableAdapter = new NorthwindUI.NorthwindDataSet15TableAdapters.UsersTableAdapter();
+            //this.usersTableAdapter = new NorthwindUI.NorthwindDataSet15TableAdapters.UsersTableAdapter();
             this.userIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.gboxNewUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet15)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.northwindDataSet15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -208,17 +208,17 @@ namespace NorthwindUI
             // 
             // northwindDataSet15
             // 
-            this.northwindDataSet15.DataSetName = "NorthwindDataSet15";
-            this.northwindDataSet15.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.northwindDataSet15.DataSetName = "NorthwindDataSet15";
+            //this.northwindDataSet15.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usersBindingSource
             // 
             this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.northwindDataSet15;
+            //this.usersBindingSource.DataSource = this.northwindDataSet15;
             // 
             // usersTableAdapter
             // 
-            this.usersTableAdapter.ClearBeforeFill = true;
+            //this.usersTableAdapter.ClearBeforeFill = true;
             // 
             // userIdDataGridViewTextBoxColumn
             // 
@@ -259,7 +259,7 @@ namespace NorthwindUI
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             this.gboxNewUser.ResumeLayout(false);
             this.gboxNewUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet15)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.northwindDataSet15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -278,9 +278,9 @@ namespace NorthwindUI
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Button btnSaveUser;
         private System.Windows.Forms.Label lblNewUser;
-        private NorthwindDataSet15 northwindDataSet15;
+        //private NorthwindDataSet15 northwindDataSet15;
         private System.Windows.Forms.BindingSource usersBindingSource;
-        private NorthwindDataSet15TableAdapters.UsersTableAdapter usersTableAdapter;
+        //private NorthwindDataSet15TableAdapters.UsersTableAdapter usersTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn userIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnRefresh;
     }

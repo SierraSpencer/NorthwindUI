@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace NorthwindUI {
+namespace NorthwindUI.Datasets {
     
     
     /// <summary>
@@ -619,7 +619,7 @@ namespace NorthwindUI {
         }
     }
 }
-namespace NorthwindUI.NorthwindDataSet10TableAdapters {
+namespace NorthwindUI.Datasets.NorthwindDataSet10TableAdapters {
     
     
     /// <summary>

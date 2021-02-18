@@ -37,11 +37,11 @@ namespace NorthwindUI
         private void NewOrder_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'northwindDataSet11.ProductList' table. You can move, or remove it, as needed.
-            this.productListTableAdapter.Fill(this.northwindDataSet11.ProductList);
+            //this.productListTableAdapter.Fill(this.northwindDataSet11.ProductList);
             // TODO: This line of code loads data into the 'northwindDataSet10.CustomerList' table. You can move, or remove it, as needed.
-            this.customerListTableAdapter1.Fill(this.northwindDataSet10.CustomerList);
+            //this.customerListTableAdapter1.Fill(this.northwindDataSet10.CustomerList);
             // TODO: This line of code loads data into the 'northwindDataSet9.CustomerList' table. You can move, or remove it, as needed.
-            this.customerListTableAdapter.Fill(this.northwindDataSet9.CustomerList);
+            //this.customerListTableAdapter.Fill(this.northwindDataSet9.CustomerList);
 
             lblDate.Text = DateTime.Now.ToString("MM/dd/yyyy");
 

@@ -53,6 +53,7 @@
       <DependentUpon>AdminPage.cs</DependentUpon>
     </Compile>
     <Compile Include="DataLayer.cs" />
+    <Compile Include="DataLayerAPI.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,82 +72,90 @@
     <Compile Include="NewOrder.Designer.cs">
       <DependentUpon>NewOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindDataSet.Designer.cs">
+    <Compile Include="Datasets\NorthwindDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindDataSet1.Designer.cs">
+    <Compile Include="Datasets\NorthwindDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindDataSet10.Designer.cs">
+    <Compile Include="Datasets\NorthwindDataSet10.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet10.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindDataSet11.Designer.cs">
+    <Compile Include="Datasets\NorthwindDataSet11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet11.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindDataSet12.Designer.cs">
+    <Compile Include="Datasets\NorthwindDataSet12.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet12.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindDataSet13.Designer.cs">
+    <Compile Include="Datasets\NorthwindDataSet13.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet13.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindDataSet14.Designer.cs">
+    <Compile Include="Datasets\NorthwindDataSet14.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet14.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindDataSet15.Designer.cs">
+    <Compile Include="Datasets\NorthwindDataSet15.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet15.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindDataSet2.Designer.cs">
+    <Compile Include="Datasets\NorthwindDataSet16.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthwindDataSet16.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\NorthwindDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindDataSet3.Designer.cs">
+    <Compile Include="Datasets\NorthwindDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet3.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindDataSet4.Designer.cs">
+    <Compile Include="Datasets\NorthwindDataSet4.cs">
+      <DependentUpon>NorthwindDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\NorthwindDataSet4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet4.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindDataSet5.Designer.cs">
+    <Compile Include="Datasets\NorthwindDataSet5.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet5.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindDataSet6.Designer.cs">
+    <Compile Include="Datasets\NorthwindDataSet6.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet6.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindDataSet7.Designer.cs">
+    <Compile Include="Datasets\NorthwindDataSet7.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet7.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindDataSet8.Designer.cs">
+    <Compile Include="Datasets\NorthwindDataSet8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet8.xsd</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindDataSet9.Designer.cs">
+    <Compile Include="Datasets\NorthwindDataSet9.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NorthwindDataSet9.xsd</DependentUpon>
@@ -184,180 +193,191 @@
     <EmbeddedResource Include="UserAndPassword.resx">
       <DependentUpon>UserAndPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="NorthwindDataSet.xsc">
+    <None Include="Datasets\NorthwindDataSet.xsc">
       <DependentUpon>NorthwindDataSet.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet.xsd">
+    <None Include="Datasets\NorthwindDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NorthwindDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="NorthwindDataSet.xss">
+    <None Include="Datasets\NorthwindDataSet.xss">
       <DependentUpon>NorthwindDataSet.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet1.xsc">
+    <None Include="Datasets\NorthwindDataSet1.xsc">
       <DependentUpon>NorthwindDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet1.xsd">
+    <None Include="Datasets\NorthwindDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NorthwindDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="NorthwindDataSet1.xss">
+    <None Include="Datasets\NorthwindDataSet1.xss">
       <DependentUpon>NorthwindDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet10.xsc">
+    <None Include="Datasets\NorthwindDataSet10.xsc">
       <DependentUpon>NorthwindDataSet10.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet10.xsd">
+    <None Include="Datasets\NorthwindDataSet10.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NorthwindDataSet10.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="NorthwindDataSet10.xss">
+    <None Include="Datasets\NorthwindDataSet10.xss">
       <DependentUpon>NorthwindDataSet10.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet11.xsc">
+    <None Include="Datasets\NorthwindDataSet11.xsc">
       <DependentUpon>NorthwindDataSet11.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet11.xsd">
+    <None Include="Datasets\NorthwindDataSet11.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NorthwindDataSet11.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="NorthwindDataSet11.xss">
+    <None Include="Datasets\NorthwindDataSet11.xss">
       <DependentUpon>NorthwindDataSet11.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet12.xsc">
+    <None Include="Datasets\NorthwindDataSet12.xsc">
       <DependentUpon>NorthwindDataSet12.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet12.xsd">
+    <None Include="Datasets\NorthwindDataSet12.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NorthwindDataSet12.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="NorthwindDataSet12.xss">
+    <None Include="Datasets\NorthwindDataSet12.xss">
       <DependentUpon>NorthwindDataSet12.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet13.xsc">
+    <None Include="Datasets\NorthwindDataSet13.xsc">
       <DependentUpon>NorthwindDataSet13.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet13.xsd">
+    <None Include="Datasets\NorthwindDataSet13.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NorthwindDataSet13.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="NorthwindDataSet13.xss">
+    <None Include="Datasets\NorthwindDataSet13.xss">
       <DependentUpon>NorthwindDataSet13.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet14.xsc">
+    <None Include="Datasets\NorthwindDataSet14.xsc">
       <DependentUpon>NorthwindDataSet14.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet14.xsd">
+    <None Include="Datasets\NorthwindDataSet14.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NorthwindDataSet14.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="NorthwindDataSet14.xss">
+    <None Include="Datasets\NorthwindDataSet14.xss">
       <DependentUpon>NorthwindDataSet14.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet15.xsc">
+    <None Include="Datasets\NorthwindDataSet15.xsc">
       <DependentUpon>NorthwindDataSet15.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet15.xsd">
+    <None Include="Datasets\NorthwindDataSet15.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NorthwindDataSet15.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="NorthwindDataSet15.xss">
+    <None Include="Datasets\NorthwindDataSet15.xss">
       <DependentUpon>NorthwindDataSet15.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet2.xsc">
+    <None Include="Datasets\NorthwindDataSet16.xsc">
+      <DependentUpon>NorthwindDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\NorthwindDataSet16.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NorthwindDataSet16.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Datasets\NorthwindDataSet16.xss">
+      <DependentUpon>NorthwindDataSet16.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\NorthwindDataSet2.xsc">
       <DependentUpon>NorthwindDataSet2.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet2.xsd">
+    <None Include="Datasets\NorthwindDataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NorthwindDataSet2.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="NorthwindDataSet2.xss">
+    <None Include="Datasets\NorthwindDataSet2.xss">
       <DependentUpon>NorthwindDataSet2.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet3.xsc">
+    <None Include="Datasets\NorthwindDataSet3.xsc">
       <DependentUpon>NorthwindDataSet3.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet3.xsd">
+    <None Include="Datasets\NorthwindDataSet3.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NorthwindDataSet3.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="NorthwindDataSet3.xss">
+    <None Include="Datasets\NorthwindDataSet3.xss">
       <DependentUpon>NorthwindDataSet3.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet4.xsc">
+    <None Include="Datasets\NorthwindDataSet4.xsc">
       <DependentUpon>NorthwindDataSet4.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet4.xsd">
+    <None Include="Datasets\NorthwindDataSet4.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NorthwindDataSet4.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="NorthwindDataSet4.xss">
+    <None Include="Datasets\NorthwindDataSet4.xss">
       <DependentUpon>NorthwindDataSet4.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet5.xsc">
+    <None Include="Datasets\NorthwindDataSet5.xsc">
       <DependentUpon>NorthwindDataSet5.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet5.xsd">
+    <None Include="Datasets\NorthwindDataSet5.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NorthwindDataSet5.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="NorthwindDataSet5.xss">
+    <None Include="Datasets\NorthwindDataSet5.xss">
       <DependentUpon>NorthwindDataSet5.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet6.xsc">
+    <None Include="Datasets\NorthwindDataSet6.xsc">
       <DependentUpon>NorthwindDataSet6.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet6.xsd">
+    <None Include="Datasets\NorthwindDataSet6.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NorthwindDataSet6.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="NorthwindDataSet6.xss">
+    <None Include="Datasets\NorthwindDataSet6.xss">
       <DependentUpon>NorthwindDataSet6.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet7.xsc">
+    <None Include="Datasets\NorthwindDataSet7.xsc">
       <DependentUpon>NorthwindDataSet7.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet7.xsd">
+    <None Include="Datasets\NorthwindDataSet7.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NorthwindDataSet7.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="NorthwindDataSet7.xss">
+    <None Include="Datasets\NorthwindDataSet7.xss">
       <DependentUpon>NorthwindDataSet7.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet8.xsc">
+    <None Include="Datasets\NorthwindDataSet8.xsc">
       <DependentUpon>NorthwindDataSet8.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet8.xsd">
+    <None Include="Datasets\NorthwindDataSet8.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NorthwindDataSet8.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="NorthwindDataSet8.xss">
+    <None Include="Datasets\NorthwindDataSet8.xss">
       <DependentUpon>NorthwindDataSet8.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet9.xsc">
+    <None Include="Datasets\NorthwindDataSet9.xsc">
       <DependentUpon>NorthwindDataSet9.xsd</DependentUpon>
     </None>
-    <None Include="NorthwindDataSet9.xsd">
+    <None Include="Datasets\NorthwindDataSet9.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>NorthwindDataSet9.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="NorthwindDataSet9.xss">
+    <None Include="Datasets\NorthwindDataSet9.xss">
       <DependentUpon>NorthwindDataSet9.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">

@@ -26,11 +26,22 @@ namespace NorthwindUI.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.110;Initial Catalog=Northwind;Persist Security Info=True;Us" +
-            "er ID=Sierra;Password=detail")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.106;Initial Catalog=Northwind;Persist Security Info=True;Us" +
+            "er ID=Sierra")]
         public string NorthwindConnectionString {
             get {
                 return ((string)(this["NorthwindConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.1.130;Initial Catalog=Northwind;User ID=Sierra;Password=detai" +
+            "l")]
+        public string NorthwindConnectionString1 {
+            get {
+                return ((string)(this["NorthwindConnectionString1"]));
             }
         }
     }

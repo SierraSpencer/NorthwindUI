@@ -10,6 +10,8 @@ namespace NorthwindUI
 {
     class DataLayer
     {
+        public static string _connectionString = "Server=192.168.1.130;DataBase=Northwind;User Id=Sierra;Password=detail;";
+
         public struct OrderDetailType
         {
             public string ProductName;
@@ -38,7 +40,7 @@ namespace NorthwindUI
         public static OrderDetailType OrderDetails(int OrderId)
         {
 
-            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
 
@@ -77,7 +79,7 @@ namespace NorthwindUI
         public static DataTable ProductsInOrder(int OrderId)
         {
 
-            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
 
@@ -103,7 +105,7 @@ namespace NorthwindUI
         public static DataRow GetProductDetails(int ProductId)
         {
 
-            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
 
@@ -129,7 +131,7 @@ namespace NorthwindUI
         public static int CreateNewOrder(String CustomerName, int EmployeeID, DateTime OrderDate, DateTime RequiredDate, DateTime ShippedDate)
         {
 
-            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
 
@@ -159,7 +161,7 @@ namespace NorthwindUI
         public static void AddProductToOrder(int OrderID, int ProductID, decimal UnitPrice)//, int Quantity)//, int Discount)
         {
 
-            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
 
@@ -184,7 +186,7 @@ namespace NorthwindUI
         public static void DeleteOrder(int OrderID)
         {
 
-            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
 
@@ -205,7 +207,7 @@ namespace NorthwindUI
         public static void DeleteProductsFromOrder(int ProductID, int OrderID)
         {
 
-            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
 
@@ -227,7 +229,7 @@ namespace NorthwindUI
         public static ProductDetailType ProductDetails(int ProductId)
         {
 
-            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
 
@@ -263,7 +265,7 @@ namespace NorthwindUI
 
         public static DataTable AllProducts()
         {
-            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
 
@@ -286,7 +288,7 @@ namespace NorthwindUI
         public static void DeleteAProduct(int ProductID)
         {
 
-            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
 
@@ -307,7 +309,7 @@ namespace NorthwindUI
         public static void ReAddAProduct(int ProductID)
         {
 
-            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
 
@@ -327,7 +329,7 @@ namespace NorthwindUI
 
         public static void AddProduct(string ProductName, string QuantityPerUnit, decimal UnitPrice, int UnitsInStock)
         {
-            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
 
@@ -350,7 +352,7 @@ namespace NorthwindUI
 
         public static void UpdateProduct(int ProductID, string ProductName, string QuantityPerUnit, decimal UnitPrice, int UnitsInStock)
         {
-            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
 
@@ -374,7 +376,7 @@ namespace NorthwindUI
 
         public static void AddUser(string UserId, string Password)
         {
-            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
 
@@ -396,7 +398,7 @@ namespace NorthwindUI
         public static void DeleteUser(string UserId)
         {
 
-            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
 
@@ -415,7 +417,7 @@ namespace NorthwindUI
         }
         public static bool IDConfirmation(string UserId, string Password)
         {
-            using (SqlConnection conn = new SqlConnection("Server=192.168.1.110;DataBase=Northwind;User Id=Sierra;Password=detail;"))
+            using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
 

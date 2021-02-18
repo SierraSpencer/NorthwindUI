@@ -26,7 +26,7 @@ namespace NorthwindUI
         private void AdminPage_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'northwindDataSet15.Users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.northwindDataSet15.Users);
+            //this.usersTableAdapter.Fill(this.northwindDataSet15.Users);
 
         }
 
@@ -41,7 +41,7 @@ namespace NorthwindUI
             DataLayer.AddUser(txtUsername.Text, txtPassword.Text);
 
             //refreshes List
-            this.usersTableAdapter.Fill(this.northwindDataSet15.Users);
+            //this.usersTableAdapter.Fill(this.northwindDataSet15.Users);
 
             //hides textboxes + clears textboxes
             gboxNewUser.Visible = false;
@@ -68,13 +68,13 @@ namespace NorthwindUI
                 //dgvUsers.Rows.Clear();
 
                 //refreshes list
-                this.usersTableAdapter.Fill(this.northwindDataSet15.Users);
+                //this.usersTableAdapter.Fill(this.northwindDataSet15.Users);
             }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            this.usersTableAdapter.Fill(this.northwindDataSet15.Users);
+            //this.usersTableAdapter.Fill(this.northwindDataSet15.Users);
         }
     }
 }

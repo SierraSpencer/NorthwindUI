@@ -21,12 +21,13 @@ namespace NorthwindUI
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'northwindDataSet4.AllOrders' table. You can move, or remove it, as needed.
-            this.allOrdersTableAdapter2.Fill(this.northwindDataSet4.AllOrders);
+            //this.allOrdersTableAdapter2.Fill(this.northwindDataSet16.CustOrdersDetail);
+            //this.allOrdersTableAdapter2.Fill(this.northwindDataSet4.AllOrders);
             // TODO: This line of code loads data into the 'northwindDataSet3.AllOrders' table. You can move, or remove it, as needed.
             //this.allOrdersTableAdapter1.Fill(this.northwindDataSet3.AllOrders);
             // TODO: This line of code loads data into the 'northwindDataSet1.AllOrders' table. You can move, or remove it, as needed.
             //this.allOrdersTableAdapter.Fill(this.northwindDataSet1.AllOrders);
-
+            //this.custOrdersDetailBindingSource1.
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -49,7 +50,7 @@ namespace NorthwindUI
         {
             try
             {
-                this.custOrdersDetailTableAdapter.Fill(this.northwindDataSet5.CustOrdersDetail, new System.Nullable<int>(((int)(System.Convert.ChangeType(orderIDToolStripTextBox.Text, typeof(int))))));
+                //this.custOrdersDetailTableAdapter.Fill(this.northwindDataSet5.CustOrdersDetail, new System.Nullable<int>(((int)(System.Convert.ChangeType(orderIDToolStripTextBox.Text, typeof(int))))));
             }
             catch (System.Exception ex)
             {
@@ -104,7 +105,7 @@ namespace NorthwindUI
                 DataLayer.DeleteOrder(orderId);
 
                 //refresh grid
-                this.allOrdersTableAdapter2.Fill(this.northwindDataSet4.AllOrders);
+                //this.allOrdersTableAdapter2.Fill(this.northwindDataSet4.AllOrders);
 
                 //clears rows
                 //dgvProducts.Rows.Clear();
@@ -130,12 +131,12 @@ namespace NorthwindUI
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            this.allOrdersTableAdapter2.Fill(this.northwindDataSet4.AllOrders);
+            //this.allOrdersTableAdapter2.Fill(this.northwindDataSet4.AllOrders);
         }
 
         public void RefreshOrders()
         {
-            this.allOrdersTableAdapter2.Fill(this.northwindDataSet4.AllOrders);
+            //this.allOrdersTableAdapter2.Fill(this.northwindDataSet4.AllOrders);
         }
 
         private void btnProductListForm_Click(object sender, EventArgs e)

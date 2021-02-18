@@ -41,20 +41,20 @@ namespace NorthwindUI
             this.lblCustomer = new System.Windows.Forms.Label();
             this.cboCustomer = new System.Windows.Forms.ComboBox();
             this.customerListBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.northwindDataSet10 = new NorthwindUI.NorthwindDataSet10();
-            this.northwindDataSet9 = new NorthwindUI.NorthwindDataSet9();
+            //this.northwindDataSet10 = new NorthwindUI.NorthwindDataSet10();
+            //this.northwindDataSet9 = new NorthwindUI.NorthwindDataSet9();
             this.customerListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerListTableAdapter = new NorthwindUI.NorthwindDataSet9TableAdapters.CustomerListTableAdapter();
-            this.customerListTableAdapter1 = new NorthwindUI.NorthwindDataSet10TableAdapters.CustomerListTableAdapter();
+            //this.customerListTableAdapter = new NorthwindUI.NorthwindDataSet9TableAdapters.CustomerListTableAdapter();
+            //this.customerListTableAdapter1 = new NorthwindUI.NorthwindDataSet10TableAdapters.CustomerListTableAdapter();
             this.label3 = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblProducts = new System.Windows.Forms.Label();
             this.cboProductSelection = new System.Windows.Forms.ComboBox();
             this.productListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.northwindDataSet11 = new NorthwindUI.NorthwindDataSet11();
+            //this.northwindDataSet11 = new NorthwindUI.NorthwindDataSet11();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
-            this.productListTableAdapter = new NorthwindUI.NorthwindDataSet11TableAdapters.ProductListTableAdapter();
+            //this.productListTableAdapter = new NorthwindUI.NorthwindDataSet11TableAdapters.ProductListTableAdapter();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblOrderNumber = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -65,11 +65,11 @@ namespace NorthwindUI
             this.ProductPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExistingOrNew = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.customerListBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet9)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.northwindDataSet10)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.northwindDataSet9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet11)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.northwindDataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,30 +124,30 @@ namespace NorthwindUI
             // customerListBindingSource1
             // 
             this.customerListBindingSource1.DataMember = "CustomerList";
-            this.customerListBindingSource1.DataSource = this.northwindDataSet10;
+//            this.customerListBindingSource1.DataSource = this.northwindDataSet10;
             // 
             // northwindDataSet10
             // 
-            this.northwindDataSet10.DataSetName = "NorthwindDataSet10";
-            this.northwindDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.northwindDataSet10.DataSetName = "NorthwindDataSet10";
+            //this.northwindDataSet10.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // northwindDataSet9
             // 
-            this.northwindDataSet9.DataSetName = "NorthwindDataSet9";
-            this.northwindDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.northwindDataSet9.DataSetName = "NorthwindDataSet9";
+            //this.northwindDataSet9.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // customerListBindingSource
             // 
             this.customerListBindingSource.DataMember = "CustomerList";
-            this.customerListBindingSource.DataSource = this.northwindDataSet9;
+            //this.customerListBindingSource.DataSource = this.northwindDataSet9;
             // 
             // customerListTableAdapter
             // 
-            this.customerListTableAdapter.ClearBeforeFill = true;
+            //this.customerListTableAdapter.ClearBeforeFill = true;
             // 
             // customerListTableAdapter1
             // 
-            this.customerListTableAdapter1.ClearBeforeFill = true;
+            //this.customerListTableAdapter1.ClearBeforeFill = true;
             // 
             // label3
             // 
@@ -202,12 +202,12 @@ namespace NorthwindUI
             // productListBindingSource
             // 
             this.productListBindingSource.DataMember = "ProductList";
-            this.productListBindingSource.DataSource = this.northwindDataSet11;
+            //this.productListBindingSource.DataSource = this.northwindDataSet11;
             // 
             // northwindDataSet11
             // 
-            this.northwindDataSet11.DataSetName = "NorthwindDataSet11";
-            this.northwindDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.northwindDataSet11.DataSetName = "NorthwindDataSet11";
+            //this.northwindDataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnAdd
             // 
@@ -270,7 +270,7 @@ namespace NorthwindUI
             // 
             // productListTableAdapter
             // 
-            this.productListTableAdapter.ClearBeforeFill = true;
+            //this.productListTableAdapter.ClearBeforeFill = true;
             // 
             // btnSave
             // 
@@ -380,11 +380,11 @@ namespace NorthwindUI
             this.Text = "NewOrder";
             this.Load += new System.EventHandler(this.NewOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customerListBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet9)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.northwindDataSet10)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.northwindDataSet9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet11)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.northwindDataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -397,21 +397,21 @@ namespace NorthwindUI
         private System.Windows.Forms.Label lblOrder;
         private System.Windows.Forms.Label lblCustomer;
         private System.Windows.Forms.ComboBox cboCustomer;
-        private NorthwindDataSet9 northwindDataSet9;
+        //private NorthwindDataSet9 northwindDataSet9;
         private System.Windows.Forms.BindingSource customerListBindingSource;
-        private NorthwindDataSet9TableAdapters.CustomerListTableAdapter customerListTableAdapter;
-        private NorthwindDataSet10 northwindDataSet10;
+        //private NorthwindDataSet9TableAdapters.CustomerListTableAdapter customerListTableAdapter;
+        //private NorthwindDataSet10 northwindDataSet10;
         private System.Windows.Forms.BindingSource customerListBindingSource1;
-        private NorthwindDataSet10TableAdapters.CustomerListTableAdapter customerListTableAdapter1;
+        //private NorthwindDataSet10TableAdapters.CustomerListTableAdapter customerListTableAdapter1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblProducts;
         private System.Windows.Forms.ComboBox cboProductSelection;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgvProducts;
-        private NorthwindDataSet11 northwindDataSet11;
+        //private NorthwindDataSet11 northwindDataSet11;
         private System.Windows.Forms.BindingSource productListBindingSource;
-        private NorthwindDataSet11TableAdapters.ProductListTableAdapter productListTableAdapter;
+        //private NorthwindDataSet11TableAdapters.ProductListTableAdapter productListTableAdapter;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblOrderNumber;
         private System.Windows.Forms.GroupBox groupBox1;
