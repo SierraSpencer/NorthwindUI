@@ -54,6 +54,20 @@ namespace NorthwindUI
             return listResult;
         }
 
+        public static List<Product> GetOrders()//string path)
+        {
+            List<Product> listResult = new List<Product>();
+            SetClient();
+
+            HttpResponseMessage response = client.GetAsync("https://localhost:44324/api/Products").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string result = response.Content.ReadAsStringAsync().Result;
+                listResult = JsonConvert.DeserializeObject<List<Product>>(result);
+            }
+            return listResult;
+        }
+
         private static void SetClient()
         {
             client.BaseAddress = new Uri("https://localhost:44324");

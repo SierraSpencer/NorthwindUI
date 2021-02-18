@@ -28,6 +28,9 @@ namespace NorthwindUI
             // TODO: This line of code loads data into the 'northwindDataSet1.AllOrders' table. You can move, or remove it, as needed.
             //this.allOrdersTableAdapter.Fill(this.northwindDataSet1.AllOrders);
             //this.custOrdersDetailBindingSource1.
+            dgvProductList.DataSource = DataLayerAPI.GetOrders();
+
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
