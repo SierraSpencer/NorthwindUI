@@ -30,16 +30,14 @@ namespace NorthwindUI
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TotalPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AllOrders = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblContactName = new System.Windows.Forms.Label();
@@ -66,6 +64,23 @@ namespace NorthwindUI
             this.btnAdmin = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnProductListForm = new System.Windows.Forms.Button();
+            this.orderId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shipName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.requiredDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shippedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shipVia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.freight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shipAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shipCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shipRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shipPostalCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shipCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employee = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shipViaNavigation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -94,7 +109,7 @@ namespace NorthwindUI
             this.dataGridView1.BackgroundColor = System.Drawing.Color.PowderBlue;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.Format = "N2";
             dataGridViewCellStyle1.NullValue = null;
@@ -104,47 +119,50 @@ namespace NorthwindUI
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TotalPrice});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.orderId,
+            this.shipName,
+            this.customerId,
+            this.employeeId,
+            this.orderDate,
+            this.requiredDate,
+            this.shippedDate,
+            this.shipVia,
+            this.freight,
+            this.shipAddress,
+            this.shipCity,
+            this.shipRegion,
+            this.shipPostalCode,
+            this.shipCountry,
+            this.customer,
+            this.employee,
+            this.shipViaNavigation});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.NullValue = null;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 108);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 108);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(684, 511);
+            this.dataGridView1.Size = new System.Drawing.Size(707, 511);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // TotalPrice
-            // 
-            this.TotalPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.TotalPrice.DataPropertyName = "TotalPrice";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.TotalPrice.DefaultCellStyle = dataGridViewCellStyle2;
-            this.TotalPrice.HeaderText = "Total Price";
-            this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.ReadOnly = true;
-            this.TotalPrice.Width = 139;
             // 
             // AllOrders
             // 
@@ -297,36 +315,36 @@ namespace NorthwindUI
             this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvProducts.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvProducts.BackgroundColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProducts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ExtendedPrice});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProducts.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProducts.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvProducts.Location = new System.Drawing.Point(6, 19);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProducts.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvProducts.RowHeadersVisible = false;
             this.dgvProducts.Size = new System.Drawing.Size(850, 224);
             this.dgvProducts.TabIndex = 0;
@@ -335,10 +353,10 @@ namespace NorthwindUI
             // 
             this.ExtendedPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.ExtendedPrice.DataPropertyName = "ExtendedPrice";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.ExtendedPrice.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.ExtendedPrice.DefaultCellStyle = dataGridViewCellStyle5;
             this.ExtendedPrice.HeaderText = "Total Price";
             this.ExtendedPrice.Name = "ExtendedPrice";
             this.ExtendedPrice.ReadOnly = true;
@@ -403,6 +421,7 @@ namespace NorthwindUI
             // fillToolStrip
             // 
             this.fillToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.fillToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.fillToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.orderIDToolStripLabel,
             this.orderIDToolStripTextBox,
@@ -457,6 +476,154 @@ namespace NorthwindUI
             this.btnProductListForm.UseVisualStyleBackColor = false;
             this.btnProductListForm.Click += new System.EventHandler(this.btnProductListForm_Click);
             // 
+            // orderId
+            // 
+            this.orderId.DataPropertyName = "orderId";
+            this.orderId.HeaderText = "Order ID";
+            this.orderId.Name = "orderId";
+            this.orderId.ReadOnly = true;
+            this.orderId.Width = 99;
+            // 
+            // shipName
+            // 
+            this.shipName.DataPropertyName = "shipName";
+            this.shipName.HeaderText = "Ship Name";
+            this.shipName.Name = "shipName";
+            this.shipName.ReadOnly = true;
+            this.shipName.Width = 113;
+            // 
+            // customerId
+            // 
+            this.customerId.DataPropertyName = "customerId";
+            this.customerId.HeaderText = "Customer ID";
+            this.customerId.Name = "customerId";
+            this.customerId.ReadOnly = true;
+            this.customerId.Visible = false;
+            this.customerId.Width = 155;
+            // 
+            // employeeId
+            // 
+            this.employeeId.DataPropertyName = "employeeId";
+            this.employeeId.HeaderText = "Employee ID";
+            this.employeeId.Name = "employeeId";
+            this.employeeId.ReadOnly = true;
+            this.employeeId.Visible = false;
+            this.employeeId.Width = 159;
+            // 
+            // orderDate
+            // 
+            this.orderDate.DataPropertyName = "orderDate";
+            this.orderDate.HeaderText = "Order Date";
+            this.orderDate.Name = "orderDate";
+            this.orderDate.ReadOnly = true;
+            this.orderDate.Width = 114;
+            // 
+            // requiredDate
+            // 
+            this.requiredDate.DataPropertyName = "requiredDate";
+            this.requiredDate.HeaderText = "Required Date";
+            this.requiredDate.Name = "requiredDate";
+            this.requiredDate.ReadOnly = true;
+            this.requiredDate.Width = 138;
+            // 
+            // shippedDate
+            // 
+            this.shippedDate.DataPropertyName = "shippedDate";
+            this.shippedDate.HeaderText = "Shipped Date";
+            this.shippedDate.Name = "shippedDate";
+            this.shippedDate.ReadOnly = true;
+            this.shippedDate.Width = 131;
+            // 
+            // shipVia
+            // 
+            this.shipVia.DataPropertyName = "shipVia";
+            this.shipVia.HeaderText = "Ship Via";
+            this.shipVia.Name = "shipVia";
+            this.shipVia.ReadOnly = true;
+            this.shipVia.Visible = false;
+            this.shipVia.Width = 118;
+            // 
+            // freight
+            // 
+            this.freight.DataPropertyName = "freight";
+            this.freight.HeaderText = "Freight";
+            this.freight.Name = "freight";
+            this.freight.ReadOnly = true;
+            this.freight.Visible = false;
+            this.freight.Width = 104;
+            // 
+            // shipAddress
+            // 
+            this.shipAddress.DataPropertyName = "shipAddress";
+            this.shipAddress.HeaderText = "Ship Address";
+            this.shipAddress.Name = "shipAddress";
+            this.shipAddress.ReadOnly = true;
+            this.shipAddress.Visible = false;
+            this.shipAddress.Width = 161;
+            // 
+            // shipCity
+            // 
+            this.shipCity.DataPropertyName = "shipCity";
+            this.shipCity.HeaderText = "Ship City";
+            this.shipCity.Name = "shipCity";
+            this.shipCity.ReadOnly = true;
+            this.shipCity.Visible = false;
+            this.shipCity.Width = 126;
+            // 
+            // shipRegion
+            // 
+            this.shipRegion.DataPropertyName = "shipRegion";
+            this.shipRegion.HeaderText = "Ship Region";
+            this.shipRegion.Name = "shipRegion";
+            this.shipRegion.ReadOnly = true;
+            this.shipRegion.Visible = false;
+            this.shipRegion.Width = 153;
+            // 
+            // shipPostalCode
+            // 
+            this.shipPostalCode.DataPropertyName = "shipPostalCode";
+            this.shipPostalCode.HeaderText = "Ship Postal Code";
+            this.shipPostalCode.Name = "shipPostalCode";
+            this.shipPostalCode.ReadOnly = true;
+            this.shipPostalCode.Visible = false;
+            this.shipPostalCode.Width = 198;
+            // 
+            // shipCountry
+            // 
+            this.shipCountry.DataPropertyName = "shipCountry";
+            this.shipCountry.HeaderText = "Ship Country";
+            this.shipCountry.Name = "shipCountry";
+            this.shipCountry.ReadOnly = true;
+            this.shipCountry.Visible = false;
+            this.shipCountry.Width = 163;
+            // 
+            // customer
+            // 
+            this.customer.DataPropertyName = "customer";
+            this.customer.HeaderText = "Customer";
+            this.customer.Name = "customer";
+            this.customer.ReadOnly = true;
+            this.customer.Visible = false;
+            this.customer.Width = 125;
+            // 
+            // employee
+            // 
+            this.employee.DataPropertyName = "employee";
+            this.employee.HeaderText = "Employee";
+            this.employee.Name = "employee";
+            this.employee.ReadOnly = true;
+            this.employee.Visible = false;
+            this.employee.Width = 129;
+            // 
+            // shipViaNavigation
+            // 
+            this.shipViaNavigation.DataPropertyName = "shipViaNavigation";
+            this.shipViaNavigation.HeaderText = "Ship Via Navigvation";
+            this.shipViaNavigation.Name = "shipViaNavigation";
+            this.shipViaNavigation.ReadOnly = true;
+            this.shipViaNavigation.Visible = false;
+            this.shipViaNavigation.Width = 241;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,7 +663,6 @@ namespace NorthwindUI
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label AllOrders;
         public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TotalPrice;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblOrderNumber;
         private System.Windows.Forms.Label label1;
@@ -522,6 +688,23 @@ namespace NorthwindUI
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnProductListForm;
         private System.Windows.Forms.Button btnAdmin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shipName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employeeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn requiredDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shippedDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shipVia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn freight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shipAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shipCity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shipRegion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shipPostalCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shipCountry;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shipViaNavigation;
     }
 }
 

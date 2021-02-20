@@ -39,6 +39,9 @@ namespace NorthwindUI
             this.btnProductRefresh = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblDetails = new System.Windows.Forms.Label();
+            this.lblCreateNewProduct = new System.Windows.Forms.Label();
+            this.lblUpdate = new System.Windows.Forms.Label();
             this.txtUnitsInStock = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
@@ -61,20 +64,23 @@ namespace NorthwindUI
             this.label1 = new System.Windows.Forms.Label();
             this.dgvProductList = new System.Windows.Forms.DataGridView();
             this.productDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            //this.northwindDataSet14 = new NorthwindUI.NorthwindDataSet14();
-            //this.northwindDataSet12 = new NorthwindUI.NorthwindDataSet12();
             this.productListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            //this.productListTableAdapter = new NorthwindUI.NorthwindDataSet12TableAdapters.ProductListTableAdapter();
-            //this.productDetailTableAdapter = new NorthwindUI.NorthwindDataSet14TableAdapters.ProductDetailTableAdapter();
             this.btnRecontinue = new System.Windows.Forms.Button();
-            this.lblUpdate = new System.Windows.Forms.Label();
-            this.lblCreateNewProduct = new System.Windows.Forms.Label();
-            this.lblDetails = new System.Windows.Forms.Label();
+            this.productName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplierId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityPerUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitsInStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitsOnOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reorderLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.discontinued = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productDetailBindingSource)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.northwindDataSet14)).BeginInit();
-            //((System.ComponentModel.ISupportInitialize)(this.northwindDataSet12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,6 +172,38 @@ namespace NorthwindUI
             this.groupBox2.Size = new System.Drawing.Size(419, 742);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
+            // 
+            // lblDetails
+            // 
+            this.lblDetails.AutoSize = true;
+            this.lblDetails.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetails.Location = new System.Drawing.Point(150, 27);
+            this.lblDetails.Name = "lblDetails";
+            this.lblDetails.Size = new System.Drawing.Size(156, 23);
+            this.lblDetails.TabIndex = 24;
+            this.lblDetails.Text = "Product Details";
+            // 
+            // lblCreateNewProduct
+            // 
+            this.lblCreateNewProduct.AutoSize = true;
+            this.lblCreateNewProduct.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreateNewProduct.Location = new System.Drawing.Point(122, 27);
+            this.lblCreateNewProduct.Name = "lblCreateNewProduct";
+            this.lblCreateNewProduct.Size = new System.Drawing.Size(220, 23);
+            this.lblCreateNewProduct.TabIndex = 23;
+            this.lblCreateNewProduct.Text = "Create A New Product";
+            this.lblCreateNewProduct.Visible = false;
+            // 
+            // lblUpdate
+            // 
+            this.lblUpdate.AutoSize = true;
+            this.lblUpdate.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdate.Location = new System.Drawing.Point(136, 27);
+            this.lblUpdate.Name = "lblUpdate";
+            this.lblUpdate.Size = new System.Drawing.Size(179, 23);
+            this.lblUpdate.TabIndex = 22;
+            this.lblUpdate.Text = "Update A Product";
+            this.lblUpdate.Visible = false;
             // 
             // txtUnitsInStock
             // 
@@ -381,6 +419,19 @@ namespace NorthwindUI
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProductList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productName,
+            this.supplierId,
+            this.productId,
+            this.categoryId,
+            this.quantityPerUnit,
+            this.unitPrice,
+            this.unitsInStock,
+            this.unitsOnOrder,
+            this.reorderLevel,
+            this.discontinued,
+            this.category,
+            this.supplier});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -410,32 +461,10 @@ namespace NorthwindUI
             // productDetailBindingSource
             // 
             this.productDetailBindingSource.DataMember = "ProductDetail";
-            //this.productDetailBindingSource.DataSource = this.northwindDataSet14;
-            // 
-            // northwindDataSet14
-            // 
-            //this.northwindDataSet14.DataSetName = "NorthwindDataSet14";
-            //this.northwindDataSet14.Namespace = "http://tempuri.org/NorthwindDataSet14.xsd";
-            //this.northwindDataSet14.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            //// 
-            //// northwindDataSet12
-            //// 
-            //this.northwindDataSet12.DataSetName = "NorthwindDataSet12";
-            //this.northwindDataSet12.Namespace = "http://tempuri.org/NorthwindDataSet12.xsd";
-            //this.northwindDataSet12.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // productListBindingSource
             // 
             this.productListBindingSource.DataMember = "ProductList";
-            //this.productListBindingSource.DataSource = this.northwindDataSet12;
-            // 
-            // productListTableAdapter
-            // 
-            //this.productListTableAdapter.ClearBeforeFill = true;
-            // 
-            // productDetailTableAdapter
-            // 
-            //this.productDetailTableAdapter.ClearBeforeFill = true;
             // 
             // btnRecontinue
             // 
@@ -449,37 +478,93 @@ namespace NorthwindUI
             this.btnRecontinue.UseVisualStyleBackColor = false;
             this.btnRecontinue.Click += new System.EventHandler(this.btnRecontinue_Click);
             // 
-            // lblUpdate
+            // productName
             // 
-            this.lblUpdate.AutoSize = true;
-            this.lblUpdate.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpdate.Location = new System.Drawing.Point(136, 27);
-            this.lblUpdate.Name = "lblUpdate";
-            this.lblUpdate.Size = new System.Drawing.Size(179, 23);
-            this.lblUpdate.TabIndex = 22;
-            this.lblUpdate.Text = "Update A Product";
-            this.lblUpdate.Visible = false;
+            this.productName.DataPropertyName = "productName";
+            this.productName.HeaderText = "Product Name";
+            this.productName.Name = "productName";
+            this.productName.Width = 168;
             // 
-            // lblCreateNewProduct
+            // supplierId
             // 
-            this.lblCreateNewProduct.AutoSize = true;
-            this.lblCreateNewProduct.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreateNewProduct.Location = new System.Drawing.Point(122, 27);
-            this.lblCreateNewProduct.Name = "lblCreateNewProduct";
-            this.lblCreateNewProduct.Size = new System.Drawing.Size(220, 23);
-            this.lblCreateNewProduct.TabIndex = 23;
-            this.lblCreateNewProduct.Text = "Create A New Product";
-            this.lblCreateNewProduct.Visible = false;
+            this.supplierId.DataPropertyName = "supplierId";
+            this.supplierId.HeaderText = "Supplier ID";
+            this.supplierId.Name = "supplierId";
+            this.supplierId.Visible = false;
+            this.supplierId.Width = 146;
             // 
-            // lblDetails
+            // productId
             // 
-            this.lblDetails.AutoSize = true;
-            this.lblDetails.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetails.Location = new System.Drawing.Point(150, 27);
-            this.lblDetails.Name = "lblDetails";
-            this.lblDetails.Size = new System.Drawing.Size(156, 23);
-            this.lblDetails.TabIndex = 24;
-            this.lblDetails.Text = "Product Details";
+            this.productId.DataPropertyName = "productId";
+            this.productId.HeaderText = "Product ID";
+            this.productId.Name = "productId";
+            this.productId.Width = 139;
+            // 
+            // categoryId
+            // 
+            this.categoryId.DataPropertyName = "categoryId";
+            this.categoryId.HeaderText = "Category ID";
+            this.categoryId.Name = "categoryId";
+            this.categoryId.Visible = false;
+            this.categoryId.Width = 151;
+            // 
+            // quantityPerUnit
+            // 
+            this.quantityPerUnit.DataPropertyName = "quantityPerUnit";
+            this.quantityPerUnit.HeaderText = "Quantity Per Unit";
+            this.quantityPerUnit.Name = "quantityPerUnit";
+            this.quantityPerUnit.Width = 203;
+            // 
+            // unitPrice
+            // 
+            this.unitPrice.DataPropertyName = "unitPrice";
+            this.unitPrice.HeaderText = "Unit Price";
+            this.unitPrice.Name = "unitPrice";
+            this.unitPrice.Width = 131;
+            // 
+            // unitsInStock
+            // 
+            this.unitsInStock.DataPropertyName = "unitsInStock";
+            this.unitsInStock.HeaderText = "Units In Stock";
+            this.unitsInStock.Name = "unitsInStock";
+            this.unitsInStock.Width = 172;
+            // 
+            // unitsOnOrder
+            // 
+            this.unitsOnOrder.DataPropertyName = "unitsOnOrder";
+            this.unitsOnOrder.HeaderText = "Units On Order";
+            this.unitsOnOrder.Name = "unitsOnOrder";
+            this.unitsOnOrder.Width = 180;
+            // 
+            // reorderLevel
+            // 
+            this.reorderLevel.DataPropertyName = "reorderLevel";
+            this.reorderLevel.HeaderText = "Reorder Level";
+            this.reorderLevel.Name = "reorderLevel";
+            this.reorderLevel.Width = 169;
+            // 
+            // discontinued
+            // 
+            this.discontinued.DataPropertyName = "discontinued";
+            this.discontinued.HeaderText = "Discontinued";
+            this.discontinued.Name = "discontinued";
+            this.discontinued.Width = 161;
+            // 
+            // category
+            // 
+            this.category.DataPropertyName = "category";
+            this.category.HeaderText = "Category";
+            this.category.Name = "category";
+            this.category.Visible = false;
+            this.category.Width = 121;
+            // 
+            // supplier
+            // 
+            this.supplier.DataPropertyName = "supplier";
+            this.supplier.HeaderText = "Supplier";
+            this.supplier.Name = "supplier";
+            this.supplier.Visible = false;
+            this.supplier.Width = 116;
             // 
             // ManageProducts
             // 
@@ -502,8 +587,6 @@ namespace NorthwindUI
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productDetailBindingSource)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.northwindDataSet14)).EndInit();
-            //((System.ComponentModel.ISupportInitialize)(this.northwindDataSet12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productListBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -548,5 +631,17 @@ namespace NorthwindUI
         private System.Windows.Forms.Label lblUpdate;
         private System.Windows.Forms.Label lblCreateNewProduct;
         private System.Windows.Forms.Label lblDetails;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplierId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityPerUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitsInStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unitsOnOrder;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reorderLevel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn discontinued;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn supplier;
     }
 }

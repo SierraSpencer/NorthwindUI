@@ -54,16 +54,16 @@ namespace NorthwindUI
             return listResult;
         }
 
-        public static List<Product> GetOrders()//string path)
+        public static List<Order> GetOrders()//string path)
         {
-            List<Product> listResult = new List<Product>();
+            List<Order> listResult = new List<Order>();
             SetClient();
 
-            HttpResponseMessage response = client.GetAsync("https://localhost:44324/api/Products").Result;
+            HttpResponseMessage response = client.GetAsync("https://localhost:44324/api/Orders").Result;
             if (response.IsSuccessStatusCode)
             {
                 string result = response.Content.ReadAsStringAsync().Result;
-                listResult = JsonConvert.DeserializeObject<List<Product>>(result);
+                listResult = JsonConvert.DeserializeObject<List<Order>>(result);
             }
             return listResult;
         }
