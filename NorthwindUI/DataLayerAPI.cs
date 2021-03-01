@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+//using NorthwindUI.DataLayer;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -54,29 +55,63 @@ namespace NorthwindUI
             return listResult;
         }
 
-        public static List<Order> GetOrders()//string path)
+        public static List<MainGridOrder> GetOrders()//string path)
         {
-            List<Order> listResult = new List<Order>();
+            List<MainGridOrder> listResult = new List<MainGridOrder>();
             SetClient();
 
-            HttpResponseMessage response = client.GetAsync("https://localhost:44324/api/Orders").Result;
+            HttpResponseMessage response = client.GetAsync("https://localhost:44324/api/GetAllOrders").Result;
             if (response.IsSuccessStatusCode)
             {
                 string result = response.Content.ReadAsStringAsync().Result;
-                listResult = JsonConvert.DeserializeObject<List<Order>>(result);
+                listResult = JsonConvert.DeserializeObject<List<MainGridOrder>>(result);
             }
             return listResult;
         }
 
         private static void SetClient()
         {
+            client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:44324");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
+        public static MainOrderDetails OrderDetails(int OrderId)
+        {
+            MainOrderDetails orderDetails = new MainOrderDetails();
+            SetClient();
 
+            HttpResponseMessage response = client.GetAsync("https://localhost:44324/api/OrderDetails/" + OrderId.ToString()).Result;
+            if (response.IsSuccessStatusCode)
+            {
+
+                string result = response.Content.ReadAsStringAsync().Result;
+                orderDetails = JsonConvert.DeserializeObject<MainOrderDetails>(result);
+
+                //OrderDetailType orderDetail = new OrderDetailType();
+                //// iterate through results, printing each to console
+                //while (rdr.Read())
+                //{
+                //    orderDetail.ProductName = rdr["ProductName"].ToString();
+                //    orderDetail.UnitPrice = Double.Parse(rdr["UnitPrice"].ToString());// rdr.GetDouble(1);
+                //    orderDetail.Quantity = int.Parse(rdr["Quantity"].ToString());// rdr.GetDouble(1);
+                //    orderDetail.Discount = Double.Parse(rdr["Discount"].ToString());// rdr.GetDouble(1);
+                //    orderDetail.ExtendedPrice = Double.Parse(rdr["ExtendedPrice"].ToString());// rdr.GetDouble(1);
+                //    orderDetail.OrderDate = DateTime.Parse(rdr["OrderDate"].ToString());// rdr.GetDouble(1);
+                //    orderDetail.ShippedDate = DateTime.Parse(rdr["ShippedDate"].ToString());
+                //    orderDetail.CompanyName = rdr["CompanyName"].ToString();
+                //    orderDetail.ContactName = rdr["ContactName"].ToString();
+                //    //Console.WriteLine("Product: {0,-35} Total: {1,2}", rdr["ProductName"], rdr["Total"]);
+                //}
+                //return orderDetail;
+
+
+            }
+            return orderDetails;
+
+        }
 
         //public static DataTable AllProducts()
         //{

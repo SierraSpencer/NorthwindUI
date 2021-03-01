@@ -36,8 +36,10 @@ namespace NorthwindUI
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //DataLayer dbMethods = new DataLayer();
-            int orderId = (int)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
-            DataLayer.OrderDetailType orderDetail = DataLayer.OrderDetails(orderId);
+            if (dataGridView1.Rows[e.RowIndex].Cells["OrderID"].Value == null) return;
+
+            int orderId = (int)dataGridView1.Rows[e.RowIndex].Cells["OrderID"].Value;
+            MainOrderDetails orderDetail = DataLayerAPI.OrderDetails(orderId);
             
             
             lblOrderNumber.Text = orderId.ToString();

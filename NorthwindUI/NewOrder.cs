@@ -53,7 +53,7 @@ namespace NorthwindUI
                 //populate details and products
                 //DataLayer dbMethods = new DataLayer();
 
-                DataLayer.OrderDetailType orderDetail = DataLayer.OrderDetails(_updateOrderId);
+                MainOrderDetails orderDetail = DataLayerAPI.OrderDetails(_updateOrderId);
                 cboCustomer.Text = orderDetail.CompanyName.ToString();
 
                 DataTable productsInOrder = DataLayer.ProductsInOrder(_updateOrderId);
