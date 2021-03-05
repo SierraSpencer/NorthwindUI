@@ -42,16 +42,18 @@ namespace NorthwindUI
                 DataLayer.ProductDetailType productDetail = DataLayer.ProductDetails(_updateProductId);
                // cboCustomer.Text = productDetail.CompanyName.ToString();
 
-                DataTable productsInOrder = DataLayer.ProductsInOrder(_updateProductId);
+                //CustOrdersDetail productsInOrder = DataLayerAPI.ProductsInOrder(_updateProductId);
+
+                this.dgvProductList.DataSource = DataLayerAPI.ProductsInOrder(_updateProductId); 
 
                 //lblOrderNumber.Text = _updateProductId.ToString();
 
-                foreach (DataRow row in productsInOrder.Rows)
-                {
-                    //int ProductID, string ProductName, string QuantityPerUnit, decimal UnitPrice, int UnitsInStock
-                    this.dgvProductList.Rows.Add(row["ProductID"], row["ProductName"], row["Quantity Per Unit"], row["Price"], row["Units In Stock"], "Existing");
-                    //add product to dgvProducts
-                }
+                //foreach (DataRow row in productsInOrder.Rows)
+                //{
+                //    //int ProductID, string ProductName, string QuantityPerUnit, decimal UnitPrice, int UnitsInStock
+                //    this.dgvProductList.Rows.Add(row["ProductID"], row["ProductName"], row["Quantity Per Unit"], row["Price"], row["Units In Stock"], "Existing");
+                //    //add product to dgvProducts
+                //}
             }
         }
 

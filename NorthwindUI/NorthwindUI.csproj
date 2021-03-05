@@ -57,6 +57,7 @@
     </Compile>
     <Compile Include="DataLayer.cs" />
     <Compile Include="DataLayerAPI.cs" />
+    <Compile Include="DataLayerModel\CustOrdersDetail.cs" />
     <Compile Include="DataLayerModel\MainGridOrder.cs" />
     <Compile Include="DataLayerModel\MainOrderDetails.cs" />
     <Compile Include="Form1.cs">

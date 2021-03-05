@@ -48,7 +48,7 @@ namespace NorthwindUI
             lblCompanyName.Text = orderDetail.CompanyName.ToString();
             lblContactName.Text = orderDetail.ContactName.ToString();
 
-            dgvProducts.DataSource = DataLayer.ProductsInOrder(orderId); 
+            dgvProducts.DataSource = DataLayerAPI.ProductsInOrder(orderId); 
         }
 
         private void fillToolStripButton_Click(object sender, EventArgs e)

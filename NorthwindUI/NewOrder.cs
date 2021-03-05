@@ -56,15 +56,17 @@ namespace NorthwindUI
                 MainOrderDetails orderDetail = DataLayerAPI.OrderDetails(_updateOrderId);
                 cboCustomer.Text = orderDetail.CompanyName.ToString();
 
-                DataTable productsInOrder = DataLayer.ProductsInOrder(_updateOrderId);
+                //CustOrdersDetail productsInOrder = DataLayerAPI.ProductsInOrder(_updateOrderId);
+
+                this.dgvProducts.DataSource = DataLayerAPI.ProductsInOrder(_updateOrderId);
 
                 lblOrderNumber.Text = _updateOrderId.ToString();
 
-                foreach (DataRow row in productsInOrder.Rows)
-                {
-                    this.dgvProducts.Rows.Add(row["ProductID"], row["ProductName"], row["UnitPrice"], "Existing");
-                    //add product to dgvProducts
-                }
+                //foreach (DataRow row in productsInOrder.Rows)
+                //{
+                //    this.dgvProducts.Rows.Add(row["ProductID"], row["ProductName"], row["UnitPrice"], "Existing");
+                //    //add product to dgvProducts
+                //}
             }
         }
 
@@ -157,13 +159,15 @@ namespace NorthwindUI
                 dgvProducts.Rows.Clear();
 
                 //refreshes product list
-                DataTable productsInOrder = DataLayer.ProductsInOrder(_updateOrderId);
+                //DataTable productsInOrder = DataLayer.ProductsInOrder(_updateOrderId);
 
-                foreach (DataRow row in productsInOrder.Rows)
-                {
-                    this.dgvProducts.Rows.Add(row["ProductID"], row["ProductName"], row["UnitPrice"], "Existing");
-                    //add product to dgvProducts
-                }
+                this.dgvProducts.DataSource = DataLayerAPI.ProductsInOrder(_updateOrderId);
+
+                //foreach (DataRow row in productsInOrder.Rows)
+                //{
+                //    this.dgvProducts.Rows.Add(row["ProductID"], row["ProductName"], row["UnitPrice"], "Existing");
+                //    //add product to dgvProducts
+                //}
             }
             //refreshes main form
             _theMainForm.RefreshOrders();

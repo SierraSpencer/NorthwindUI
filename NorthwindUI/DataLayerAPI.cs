@@ -90,27 +90,27 @@ namespace NorthwindUI
                 string result = response.Content.ReadAsStringAsync().Result;
                 orderDetails = JsonConvert.DeserializeObject<MainOrderDetails>(result);
 
-                //OrderDetailType orderDetail = new OrderDetailType();
-                //// iterate through results, printing each to console
-                //while (rdr.Read())
-                //{
-                //    orderDetail.ProductName = rdr["ProductName"].ToString();
-                //    orderDetail.UnitPrice = Double.Parse(rdr["UnitPrice"].ToString());// rdr.GetDouble(1);
-                //    orderDetail.Quantity = int.Parse(rdr["Quantity"].ToString());// rdr.GetDouble(1);
-                //    orderDetail.Discount = Double.Parse(rdr["Discount"].ToString());// rdr.GetDouble(1);
-                //    orderDetail.ExtendedPrice = Double.Parse(rdr["ExtendedPrice"].ToString());// rdr.GetDouble(1);
-                //    orderDetail.OrderDate = DateTime.Parse(rdr["OrderDate"].ToString());// rdr.GetDouble(1);
-                //    orderDetail.ShippedDate = DateTime.Parse(rdr["ShippedDate"].ToString());
-                //    orderDetail.CompanyName = rdr["CompanyName"].ToString();
-                //    orderDetail.ContactName = rdr["ContactName"].ToString();
-                //    //Console.WriteLine("Product: {0,-35} Total: {1,2}", rdr["ProductName"], rdr["Total"]);
-                //}
-                //return orderDetail;
-
-
             }
             return orderDetails;
 
+        }
+
+        public static List<CustOrdersDetail> ProductsInOrder(int ProductID)
+        {
+
+            List<CustOrdersDetail> orderDetails = new List<CustOrdersDetail>();
+            SetClient();
+
+            HttpResponseMessage response = client.GetAsync("https://localhost:44324/api/CustOrdersDetail/" + ProductID.ToString()).Result;
+            if (response.IsSuccessStatusCode)
+            {
+
+                string result = response.Content.ReadAsStringAsync().Result;
+                orderDetails = JsonConvert.DeserializeObject<List<CustOrdersDetail>>(result);
+                //listResult = JsonConvert.DeserializeObject<List<MainGridOrder>>(result);
+
+            }
+            return orderDetails;
         }
 
         //public static DataTable AllProducts()
