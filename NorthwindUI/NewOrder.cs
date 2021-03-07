@@ -45,6 +45,9 @@ namespace NorthwindUI
 
             lblDate.Text = DateTime.Now.ToString("MM/dd/yyyy");
 
+            cboCustomer.DataSource = DataLayerAPI.GetCustomers();//.Select(x => x.CompanyName).ToList();
+            cboProductSelection.DataSource = DataLayerAPI.GetProducts();//.Select(x => x.productName).ToList();
+
             if (_updateOrderId > -1)
             {
                 this.Text = "Update Order";
@@ -54,9 +57,12 @@ namespace NorthwindUI
                 //DataLayer dbMethods = new DataLayer();
 
                 MainOrderDetails orderDetail = DataLayerAPI.OrderDetails(_updateOrderId);
+                
                 cboCustomer.Text = orderDetail.CompanyName.ToString();
 
                 //CustOrdersDetail productsInOrder = DataLayerAPI.ProductsInOrder(_updateOrderId);
+
+                
 
                 this.dgvProducts.DataSource = DataLayerAPI.ProductsInOrder(_updateOrderId);
 
@@ -77,11 +83,11 @@ namespace NorthwindUI
                 MessageBox.Show("Please select a product", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-           // DataLayer dbMethods = new DataLayer();
+            // DataLayer dbMethods = new DataLayer();
 
-            DataRow productDetails = DataLayer.GetProductDetails((int)cboProductSelection.SelectedValue);
+            Product productDetails = DataLayerAPI.GetProductDetails((int)cboProductSelection.SelectedValue);
 
-            this.dgvProducts.Rows.Add(productDetails[0], productDetails[1], productDetails[2], "New");//, productDetails[3]);
+            this.dgvProducts.Rows.Add(productDetails.productId, productDetails.productName, productDetails.unitPrice, "New");//, productDetails[3]);
 
             string selectedProduct = cboCustomer.Text;
             cboCustomer.DataSource = null;
@@ -127,7 +133,7 @@ namespace NorthwindUI
 
             foreach (DataGridViewRow row in dgvProducts.Rows)
             {
-                DataLayer.AddProductToOrder(orderId, (int)row.Cells[0].Value, (decimal)row.Cells[2].Value);
+                DataLayer.AddProductToOrder(orderId, (int)row.Cells[0].Value, Convert.ToDecimal(row.Cells[2].Value));
             }
             //add products to order
         }

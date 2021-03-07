@@ -107,10 +107,11 @@ namespace NorthwindUI
                 int orderId = (int)selectedRow.Cells[0].Value;
 
                 //excute sp to delete order
-                DataLayer.DeleteOrder(orderId);
+                DataLayerAPI.DeleteOrder(orderId);
 
                 //refresh grid
                 //this.allOrdersTableAdapter2.Fill(this.northwindDataSet4.AllOrders);
+                dataGridView1.DataSource = DataLayerAPI.GetOrders();
 
                 //clears rows
                 //dgvProducts.Rows.Clear();
@@ -137,11 +138,13 @@ namespace NorthwindUI
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             //this.allOrdersTableAdapter2.Fill(this.northwindDataSet4.AllOrders);
+            dataGridView1.DataSource = DataLayerAPI.GetOrders();
         }
 
         public void RefreshOrders()
         {
             //this.allOrdersTableAdapter2.Fill(this.northwindDataSet4.AllOrders);
+            dataGridView1.DataSource = DataLayerAPI.GetOrders();
         }
 
         private void btnProductListForm_Click(object sender, EventArgs e)

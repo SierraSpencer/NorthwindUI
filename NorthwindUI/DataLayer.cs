@@ -12,19 +12,19 @@ namespace NorthwindUI
     {
         public static string _connectionString = "Server=192.168.1.130;DataBase=Northwind;User Id=Sierra;Password=detail;";
 
-        public struct OrderDetailType
-        {
-            public string ProductName;
-            public double UnitPrice;
-            public int Quantity;
-            public double Discount;
-            public double ExtendedPrice;
-            public DateTime OrderDate;
-            public DateTime ShippedDate;
-            public string CompanyName;
-            public string ContactName;
+        //public struct OrderDetailType
+        //{
+        //    public string ProductName;
+        //    public double UnitPrice;
+        //    public int Quantity;
+        //    public double Discount;
+        //    public double ExtendedPrice;
+        //    public DateTime OrderDate;
+        //    public DateTime ShippedDate;
+        //    public string CompanyName;
+        //    public string ContactName;
 
-        }
+        //}
         
         public struct ProductDetailType
         {
@@ -102,31 +102,31 @@ namespace NorthwindUI
         //    }
         //}
 
-        public static DataRow GetProductDetails(int ProductId)
-        {
+        //public static DataRow GetProductDetails(int ProductId)
+        //{
 
-            using (SqlConnection conn = new SqlConnection(_connectionString))
-            {
-                conn.Open();
+        //    using (SqlConnection conn = new SqlConnection(_connectionString))
+        //    {
+        //        conn.Open();
 
-                // 1.  create a command object identifying the stored procedure
-                SqlCommand cmd = new SqlCommand("GetProductDetail", conn);
+        //        // 1.  create a command object identifying the stored procedure
+        //        SqlCommand cmd = new SqlCommand("GetProductDetail", conn);
 
-                // 2. set the command object so it knows to execute a stored procedure
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+        //        // 2. set the command object so it knows to execute a stored procedure
+        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                // 3. add parameter to command, which will be passed to the stored procedure
-                cmd.Parameters.Add(new SqlParameter("@ProductID", ProductId));
+        //        // 3. add parameter to command, which will be passed to the stored procedure
+        //        cmd.Parameters.Add(new SqlParameter("@ProductID", ProductId));
 
-                // execute the command
-                using (SqlDataReader rdr = cmd.ExecuteReader())
-                {
-                    DataTable dt = new DataTable();
-                    dt.Load(rdr);
-                    return dt.Rows[0];
-                }
-            }
-        }
+        //        // execute the command
+        //        using (SqlDataReader rdr = cmd.ExecuteReader())
+        //        {
+        //            DataTable dt = new DataTable();
+        //            dt.Load(rdr);
+        //            return dt.Rows[0];
+        //        }
+        //    }
+        //}
 
         public static int CreateNewOrder(String CustomerName, int EmployeeID, DateTime OrderDate, DateTime RequiredDate, DateTime ShippedDate)
         {
@@ -183,26 +183,26 @@ namespace NorthwindUI
             }
         }
 
-        public static void DeleteOrder(int OrderID)
-        {
+        //public static void DeleteOrder(int OrderID)
+        //{
 
-            using (SqlConnection conn = new SqlConnection(_connectionString))
-            {
-                conn.Open();
+        //    using (SqlConnection conn = new SqlConnection(_connectionString))
+        //    {
+        //        conn.Open();
 
-                // 1.  create a command object identifying the stored procedure
-                SqlCommand cmd = new SqlCommand("DeleteOrder", conn);
+        //        // 1.  create a command object identifying the stored procedure
+        //        SqlCommand cmd = new SqlCommand("DeleteOrder", conn);
 
-                // 2. set the command object so it knows to execute a stored procedure
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+        //        // 2. set the command object so it knows to execute a stored procedure
+        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                // 3. add parameter to command, which will be passed to the stored procedure
-                cmd.Parameters.Add(new SqlParameter("@OrderID", OrderID));
+        //        // 3. add parameter to command, which will be passed to the stored procedure
+        //        cmd.Parameters.Add(new SqlParameter("@OrderID", OrderID));
 
-                // execute the command
-                cmd.ExecuteNonQuery();
-            }
-        }
+        //        // execute the command
+        //        cmd.ExecuteNonQuery();
+        //    }
+        //}
 
         public static void DeleteProductsFromOrder(int ProductID, int OrderID)
         {
@@ -226,42 +226,42 @@ namespace NorthwindUI
             }
         }
 
-        public static ProductDetailType ProductDetails(int ProductId)
-        {
+        //public static ProductDetailType ProductDetails(int ProductId)
+        //{
 
-            using (SqlConnection conn = new SqlConnection(_connectionString))
-            {
-                conn.Open();
+        //    using (SqlConnection conn = new SqlConnection(_connectionString))
+        //    {
+        //        conn.Open();
 
-                // 1.  create a command object identifying the stored procedure
-                SqlCommand cmd = new SqlCommand("AllProductDetails", conn);
+        //        // 1.  create a command object identifying the stored procedure
+        //        SqlCommand cmd = new SqlCommand("AllProductDetails", conn);
 
-                // 2. set the command object so it knows to execute a stored procedure
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+        //        // 2. set the command object so it knows to execute a stored procedure
+        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                // 3. add parameter to command, which will be passed to the stored procedure
-                cmd.Parameters.Add(new SqlParameter("@ProductID", ProductId));
+        //        // 3. add parameter to command, which will be passed to the stored procedure
+        //        cmd.Parameters.Add(new SqlParameter("@ProductID", ProductId));
 
-                // execute the command
-                using (SqlDataReader rdr = cmd.ExecuteReader())
-                {
-                    ProductDetailType productDetail = new ProductDetailType();
-                    // iterate through results, printing each to console
-                    while (rdr.Read())
-                    {
-                        productDetail.ProductName = rdr["ProductName"].ToString();
-                        productDetail.UnitPrice = Double.Parse(rdr["UnitPrice"].ToString());// rdr.GetDouble(1);
-                        productDetail.Discontinued = rdr["Discontinued"].ToString();// rdr.GetDouble(1);
-                        productDetail.UnitsOnOrder = int.Parse(rdr["UnitsOnOrder"].ToString());// rdr.GetDouble(1);
-                        productDetail.UnitsInStock = int.Parse(rdr["UnitsInStock"].ToString());// rdr.GetDouble(1);
-                        productDetail.QuantityPerUnit = Double.Parse(rdr["UnitPrice"].ToString());// rdr.GetDouble(1);
-                        productDetail.ReorderLevel = int.Parse(rdr["ReorderLevel"].ToString());
-                        //Console.WriteLine("Product: {0,-35} Total: {1,2}", rdr["ProductName"], rdr["Total"]);
-                    }
-                    return productDetail;
-                }
-            }
-        }
+        //        // execute the command
+        //        using (SqlDataReader rdr = cmd.ExecuteReader())
+        //        {
+        //            ProductDetailType productDetail = new ProductDetailType();
+        //            // iterate through results, printing each to console
+        //            while (rdr.Read())
+        //            {
+        //                productDetail.ProductName = rdr["ProductName"].ToString();
+        //                productDetail.UnitPrice = Double.Parse(rdr["UnitPrice"].ToString());// rdr.GetDouble(1);
+        //                productDetail.Discontinued = rdr["Discontinued"].ToString();// rdr.GetDouble(1);
+        //                productDetail.UnitsOnOrder = int.Parse(rdr["UnitsOnOrder"].ToString());// rdr.GetDouble(1);
+        //                productDetail.UnitsInStock = int.Parse(rdr["UnitsInStock"].ToString());// rdr.GetDouble(1);
+        //                productDetail.QuantityPerUnit = Double.Parse(rdr["UnitPrice"].ToString());// rdr.GetDouble(1);
+        //                productDetail.ReorderLevel = int.Parse(rdr["ReorderLevel"].ToString());
+        //                //Console.WriteLine("Product: {0,-35} Total: {1,2}", rdr["ProductName"], rdr["Total"]);
+        //            }
+        //            return productDetail;
+        //        }
+        //    }
+        //}
 
         public static DataTable AllProducts()
         {

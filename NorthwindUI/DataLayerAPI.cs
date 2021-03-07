@@ -113,6 +113,49 @@ namespace NorthwindUI
             return orderDetails;
         }
 
+        public static Product GetProductDetails(int ProductId)
+        {
+            Product orderDetails = new Product();
+            SetClient();
+
+            HttpResponseMessage response = client.GetAsync("https://localhost:44324/api/Products/" + ProductId.ToString()).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string result = response.Content.ReadAsStringAsync().Result;
+                orderDetails = JsonConvert.DeserializeObject<Product>(result);
+            }
+            return orderDetails;
+        }
+
+        public static List<Customer> GetCustomers()//string path)
+        {
+            List<Customer> listResult = new List<Customer>();
+            SetClient();
+
+            HttpResponseMessage response = client.GetAsync("https://localhost:44324/api/Customers").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string result = response.Content.ReadAsStringAsync().Result;
+                listResult = JsonConvert.DeserializeObject<List<Customer>>(result);
+            }
+            return listResult;
+        }
+
+        public static void DeleteOrder(int OrderID)
+        {
+
+            SetClient();
+
+            HttpResponseMessage response = client.DeleteAsync("https://localhost:44324/api/Orders/" + OrderID.ToString()).Result;
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Error while trying to delete order " + response.Content);
+            }
+        }
+
+
+
+
         //public static DataTable AllProducts()
         //{
 

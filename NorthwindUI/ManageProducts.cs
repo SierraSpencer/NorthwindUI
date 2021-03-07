@@ -39,33 +39,19 @@ namespace NorthwindUI
 
             if (_updateProductId > -1)
             {
-                DataLayer.ProductDetailType productDetail = DataLayer.ProductDetails(_updateProductId);
-               // cboCustomer.Text = productDetail.CompanyName.ToString();
-
-                //CustOrdersDetail productsInOrder = DataLayerAPI.ProductsInOrder(_updateProductId);
-
-                this.dgvProductList.DataSource = DataLayerAPI.ProductsInOrder(_updateProductId); 
-
-                //lblOrderNumber.Text = _updateProductId.ToString();
-
-                //foreach (DataRow row in productsInOrder.Rows)
-                //{
-                //    //int ProductID, string ProductName, string QuantityPerUnit, decimal UnitPrice, int UnitsInStock
-                //    this.dgvProductList.Rows.Add(row["ProductID"], row["ProductName"], row["Quantity Per Unit"], row["Price"], row["Units In Stock"], "Existing");
-                //    //add product to dgvProducts
-                //}
+                this.dgvProductList.DataSource = DataLayerAPI.ProductsInOrder(_updateProductId);
             }
         }
 
         private void dgvProductList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int productId = (int)dgvProductList.Rows[e.RowIndex].Cells[0].Value;
-            DataLayer.ProductDetailType productDetail = DataLayer.ProductDetails(productId);
+            Product productDetail = DataLayerAPI.GetProductDetails(productId);
 
-            lblProductName.Text = productDetail.ProductName.ToString();
-            lblUnitPrice.Text = productDetail.UnitPrice.ToString();
+            lblProductName.Text = productDetail.productName;
+            lblUnitPrice.Text = productDetail.unitPrice.ToString();
 
-            if (productDetail.Discontinued == "True")
+            if (productDetail.discontinued == true)
             {
                 lblDiscontinued.Text = "Yes";
             }
@@ -76,10 +62,10 @@ namespace NorthwindUI
 
             _updateProductId = productId;
 
-            lblUnitsOnOrder.Text = productDetail.UnitsOnOrder.ToString();
-            lblUnitsInStock.Text = productDetail.UnitsInStock.ToString();
-            lblQuantityPerUnit.Text = productDetail.QuantityPerUnit.ToString();
-            lblReorderLevel.Text = productDetail.ReorderLevel.ToString();
+            lblUnitsOnOrder.Text = productDetail.unitsOnOrder.ToString();
+            lblUnitsInStock.Text = productDetail.unitsInStock.ToString();
+            lblQuantityPerUnit.Text = productDetail.quantityPerUnit.ToString();
+            lblReorderLevel.Text = productDetail.reorderLevel.ToString();
         }
 
         private void btnProductAdd_Click(object sender, EventArgs e)
@@ -121,9 +107,6 @@ namespace NorthwindUI
         {
             if (_updateProductId == -1)
             {
-               // DataRow addDetails = DataLayer.AllProducts();
-                //this.dgvProductList.Rows.Add(addDetails[0], addDetails[1], addDetails[2], addDetails[3], addDetails[4], "New");
-
                 DataLayer.AddProduct(txtProductName.Text, txtQuantity.Text, int.Parse(txtPrice.Text), int.Parse(txtUnitsInStock.Text));
             }
             else
