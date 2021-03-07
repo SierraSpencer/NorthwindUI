@@ -105,14 +105,24 @@ namespace NorthwindUI
 
         private void btnSaveProduct_Click(object sender, EventArgs e)
         {
+            Product product = new Product();
+
+            product.productName = txtProductName.Text;
+            product.quantityPerUnit = txtQuantity.Text;
+            product.unitPrice = int.Parse(txtPrice.Text);
+            product.unitsInStock = int.Parse(txtUnitsInStock.Text);
+            product.categoryId = 2;
+            product.supplier = 29;
+
             if (_updateProductId == -1)
             {
-                DataLayer.AddProduct(txtProductName.Text, txtQuantity.Text, int.Parse(txtPrice.Text), int.Parse(txtUnitsInStock.Text));
+                DataLayerAPI.AddProduct(product);
             }
             else
             {
+                product.productId = _updateProductId;
                 //update Product
-                DataLayer.UpdateProduct(_updateProductId, txtProductName.Text, txtQuantity.Text, int.Parse(txtPrice.Text), int.Parse(txtUnitsInStock.Text));
+                DataLayerAPI.UpdateProduct(product);
                 lblDetails.Visible = false;
                 lblUpdate.Visible = false;
                 lblCreateNewProduct.Visible = false;
@@ -126,7 +136,7 @@ namespace NorthwindUI
             }
 
             //refreshes List
-            dgvProductList.DataSource = DataLayer.AllProducts();
+            dgvProductList.DataSource = DataLayerAPI.GetProducts();
 
             //clears textboxes
             txtProductName.Clear();
@@ -154,14 +164,14 @@ namespace NorthwindUI
                 dgvProductList.Rows.Clear();
 
                 //refreshes product list
-                dgvProductList.DataSource = DataLayer.AllProducts();
+                dgvProductList.DataSource = DataLayerAPI.GetProducts();
             }
         }
 
         private void btnProductRefresh_Click(object sender, EventArgs e)
         {
             //Refreshes product List
-            dgvProductList.DataSource = DataLayer.AllProducts();
+            dgvProductList.DataSource = DataLayerAPI.GetProducts();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -209,7 +219,7 @@ namespace NorthwindUI
                 dgvProductList.Rows.Clear();
 
                 //refreshes product list
-                dgvProductList.DataSource = DataLayer.AllProducts();
+                dgvProductList.DataSource = DataLayerAPI.GetProducts();
             }
         }
     }

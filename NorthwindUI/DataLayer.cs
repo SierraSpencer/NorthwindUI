@@ -26,16 +26,16 @@ namespace NorthwindUI
 
         //}
         
-        public struct ProductDetailType
-        {
-            public string ProductName;
-            public double UnitPrice;
-            public string Discontinued;
-            public int UnitsOnOrder;
-            public int UnitsInStock;
-            public double QuantityPerUnit;
-            public int ReorderLevel;
-        }
+        //public struct ProductDetailType
+        //{
+        //    public string ProductName;
+        //    public double UnitPrice;
+        //    public string Discontinued;
+        //    public int UnitsOnOrder;
+        //    public int UnitsInStock;
+        //    public double QuantityPerUnit;
+        //    public int ReorderLevel;
+        //}
 
         //public static OrderDetailType OrderDetails(int OrderId)
         //{
@@ -263,27 +263,27 @@ namespace NorthwindUI
         //    }
         //}
 
-        public static DataTable AllProducts()
-        {
-            using (SqlConnection conn = new SqlConnection(_connectionString))
-            {
-                conn.Open();
+        //public static DataTable AllProducts()
+        //{
+        //    using (SqlConnection conn = new SqlConnection(_connectionString))
+        //    {
+        //        conn.Open();
 
-                // 1.  create a command object identifying the stored procedure
-                SqlCommand cmd = new SqlCommand("AllProducts", conn);
+        //        // 1.  create a command object identifying the stored procedure
+        //        SqlCommand cmd = new SqlCommand("AllProducts", conn);
 
-                // 2. set the command object so it knows to execute a stored procedure
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+        //        // 2. set the command object so it knows to execute a stored procedure
+        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                // execute the command
-                using (SqlDataReader rdr = cmd.ExecuteReader())
-                {
-                    DataTable dt = new DataTable();
-                    dt.Load(rdr);
-                    return dt;
-                }
-            }
-        }
+        //        // execute the command
+        //        using (SqlDataReader rdr = cmd.ExecuteReader())
+        //        {
+        //            DataTable dt = new DataTable();
+        //            dt.Load(rdr);
+        //            return dt;
+        //        }
+        //    }
+        //}
 
         public static void DeleteAProduct(int ProductID)
         {
@@ -327,52 +327,52 @@ namespace NorthwindUI
             }
         }
 
-        public static void AddProduct(string ProductName, string QuantityPerUnit, decimal UnitPrice, int UnitsInStock)
-        {
-            using (SqlConnection conn = new SqlConnection(_connectionString))
-            {
-                conn.Open();
+        //public static void AddProduct(string ProductName, string QuantityPerUnit, decimal UnitPrice, int UnitsInStock)
+        //{
+        //    using (SqlConnection conn = new SqlConnection(_connectionString))
+        //    {
+        //        conn.Open();
 
-                // 1.  create a command object identifying the stored procedure
-                SqlCommand cmd = new SqlCommand("AddProduct", conn);
+        //        // 1.  create a command object identifying the stored procedure
+        //        SqlCommand cmd = new SqlCommand("AddProduct", conn);
 
-                // 2. set the command object so it knows to execute a stored procedure
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+        //        // 2. set the command object so it knows to execute a stored procedure
+        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                // 3. add parameter to command, which will be passed to the stored procedure
-                cmd.Parameters.Add(new SqlParameter("@ProductName", ProductName));
-                cmd.Parameters.Add(new SqlParameter("@QuantityPerUnit", QuantityPerUnit));
-                cmd.Parameters.Add(new SqlParameter("@UnitPrice", UnitPrice));
-                cmd.Parameters.Add(new SqlParameter("@UnitsInStock", UnitsInStock));
+        //        // 3. add parameter to command, which will be passed to the stored procedure
+        //        cmd.Parameters.Add(new SqlParameter("@ProductName", ProductName));
+        //        cmd.Parameters.Add(new SqlParameter("@QuantityPerUnit", QuantityPerUnit));
+        //        cmd.Parameters.Add(new SqlParameter("@UnitPrice", UnitPrice));
+        //        cmd.Parameters.Add(new SqlParameter("@UnitsInStock", UnitsInStock));
 
-                // execute the command
-                cmd.ExecuteNonQuery();
-            }
-        }
+        //        // execute the command
+        //        cmd.ExecuteNonQuery();
+        //    }
+        //}
 
-        public static void UpdateProduct(int ProductID, string ProductName, string QuantityPerUnit, decimal UnitPrice, int UnitsInStock)
-        {
-            using (SqlConnection conn = new SqlConnection(_connectionString))
-            {
-                conn.Open();
+        //public static void UpdateProduct(int ProductID, string ProductName, string QuantityPerUnit, decimal UnitPrice, int UnitsInStock)
+        //{
+        //    using (SqlConnection conn = new SqlConnection(_connectionString))
+        //    {
+        //        conn.Open();
 
-                // 1.  create a command object identifying the stored procedure
-                SqlCommand cmd = new SqlCommand("UpdateProduct", conn);
+        //        // 1.  create a command object identifying the stored procedure
+        //        SqlCommand cmd = new SqlCommand("UpdateProduct", conn);
 
-                // 2. set the command object so it knows to execute a stored procedure
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+        //        // 2. set the command object so it knows to execute a stored procedure
+        //        cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                // 3. add parameter to command, which will be passed to the stored procedure
-                cmd.Parameters.Add(new SqlParameter("@ProductID", ProductID));
-                cmd.Parameters.Add(new SqlParameter("@ProductName", ProductName));
-                cmd.Parameters.Add(new SqlParameter("@QuantityPerUnit", QuantityPerUnit));
-                cmd.Parameters.Add(new SqlParameter("@UnitPrice", UnitPrice));
-                cmd.Parameters.Add(new SqlParameter("@UnitsInStock", UnitsInStock));
+        //        // 3. add parameter to command, which will be passed to the stored procedure
+        //        cmd.Parameters.Add(new SqlParameter("@ProductID", ProductID));
+        //        cmd.Parameters.Add(new SqlParameter("@ProductName", ProductName));
+        //        cmd.Parameters.Add(new SqlParameter("@QuantityPerUnit", QuantityPerUnit));
+        //        cmd.Parameters.Add(new SqlParameter("@UnitPrice", UnitPrice));
+        //        cmd.Parameters.Add(new SqlParameter("@UnitsInStock", UnitsInStock));
 
-                // execute the command
-                cmd.ExecuteNonQuery();
-            }
-        }
+        //        // execute the command
+        //        cmd.ExecuteNonQuery();
+        //    }
+        //}
 
         public static void AddUser(string UserId, string Password)
         {

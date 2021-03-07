@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+//using Microsoft.AspNet.WebApi.Client;
 
 
 namespace NorthwindUI
@@ -153,8 +154,33 @@ namespace NorthwindUI
             }
         }
 
+        public static void AddProduct(Product product)
+        {
+            SetClient();
 
+            //HttpContent content = new StringContent(product.ToString(), Encoding.UTF8, "application/json");
+            string content = JsonConvert.SerializeObject(product);
 
+            HttpResponseMessage response = client.PostAsJsonAsync("https://localhost:44324/api/Products", content).Result;
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Error while trying to add a product " + response.Content);
+            }
+        }
+
+        public static void UpdateProduct(Product product)
+        {
+            SetClient();
+
+            //HttpContent content = new StringContent(product.ToString(), Encoding.UTF8, "application/json");
+            string content = JsonConvert.SerializeObject(product);
+
+            HttpResponseMessage response = client.PutAsJsonAsync("https://localhost:44324/api/Products/" + product.productId, content).Result;
+            if (!response.IsSuccessStatusCode)
+            {
+                throw new Exception("Error while trying to update an product " + response.Content);
+            }
+        }
 
         //public static DataTable AllProducts()
         //{
