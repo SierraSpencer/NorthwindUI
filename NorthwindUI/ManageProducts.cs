@@ -113,9 +113,8 @@ namespace NorthwindUI
             product.UnitPrice = int.Parse(txtPrice.Text);
             product.UnitsInStock = short.Parse(txtUnitsInStock.Text);
             product.CategoryId = 2;
-            Supplier supplier = new Supplier();
-            supplier.SupplierId = 29;
-            product.Supplier = supplier;
+            product.SupplierId = 29;
+            //product.Supplier = GetDefaultSupplier();
 
             if (_updateProductId == -1)
             {
@@ -148,6 +147,25 @@ namespace NorthwindUI
             txtUnitsInStock.Clear();
             txtPrice.Clear();
         }
+
+        //private Supplier GetDefaultSupplier()
+        //{
+        //    Supplier supplier = new Supplier();
+        //    supplier.SupplierId = 29;
+        //    supplier.Address = "148 rue Chasseur";
+        //    supplier.City = "";
+        //    supplier.CompanyName = "";
+        //    supplier.ContactName = "";
+        //    supplier.ContactTitle = "";
+        //    supplier.Country = "";
+        //    supplier.Fax = "";
+        //    supplier.HomePage = "";
+        //    supplier.Phone = "";
+        //    supplier.PostalCode = "";
+        //    supplier.Products = ;
+
+        //    return supplier;
+        //}
 
         private void bntProductDelete_Click(object sender, EventArgs e)
         {
