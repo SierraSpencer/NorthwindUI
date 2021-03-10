@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NorthwindUI.DataLayerModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -87,7 +88,7 @@ namespace NorthwindUI
 
             Product productDetails = DataLayerAPI.GetProductDetails((int)cboProductSelection.SelectedValue);
 
-            this.dgvProducts.Rows.Add(productDetails.productId, productDetails.productName, productDetails.unitPrice, "New");//, productDetails[3]);
+            this.dgvProducts.Rows.Add(productDetails.ProductId, productDetails.ProductName, productDetails.UnitPrice, "New");//, productDetails[3]);
 
             string selectedProduct = cboCustomer.Text;
             cboCustomer.DataSource = null;

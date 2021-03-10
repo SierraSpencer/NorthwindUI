@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using NorthwindUI.DataLayerModel;
 //using NorthwindUI.DataLayer;
 using System;
 using System.Collections.Generic;
@@ -154,14 +155,18 @@ namespace NorthwindUI
             }
         }
 
-        public static void AddProduct(Product product)
+        public async static void AddProduct(Product product)
         {
             SetClient();
 
-            //HttpContent content = new StringContent(product.ToString(), Encoding.UTF8, "application/json");
-            string content = JsonConvert.SerializeObject(product);
+            //StringContent sContent = new StringContent(JsonConvert.SerializeObject(product), Encoding.UTF8, "application/json");
+            //HttpResponseMessage response = client.PostAsync("https://localhost:44324/api/Products", sContent).Result;
 
-            HttpResponseMessage response = client.PostAsJsonAsync("https://localhost:44324/api/Products", content).Result;
+            HttpResponseMessage response = await client.PostAsJsonAsync("api/products", product);
+            //HttpContent content = new StringContent(product.ToString(), Encoding.UTF8, "application/json");
+            //string content = JsonConvert.SerializeObject(product);
+
+            //HttpResponseMessage response = client.PostAsJsonAsync("https://localhost:44324/api/Products", content).Result;
             if (!response.IsSuccessStatusCode)
             {
                 throw new Exception("Error while trying to add a product " + response.Content);
@@ -175,7 +180,7 @@ namespace NorthwindUI
             //HttpContent content = new StringContent(product.ToString(), Encoding.UTF8, "application/json");
             string content = JsonConvert.SerializeObject(product);
 
-            HttpResponseMessage response = client.PutAsJsonAsync("https://localhost:44324/api/Products/" + product.productId, content).Result;
+            HttpResponseMessage response = client.PutAsJsonAsync("https://localhost:44324/api/Products/" + product.ProductId, content).Result;
             if (!response.IsSuccessStatusCode)
             {
                 throw new Exception("Error while trying to update an product " + response.Content);

@@ -60,10 +60,44 @@
     </Compile>
     <Compile Include="DataLayer.cs" />
     <Compile Include="DataLayerAPI.cs" />
+    <Compile Include="DataLayerModel\AllOrdersItem.cs" />
+    <Compile Include="DataLayerModel\AlphabeticalListOfProduct.cs" />
+    <Compile Include="DataLayerModel\Category.cs" />
+    <Compile Include="DataLayerModel\CategorySalesFor1997.cs" />
+    <Compile Include="DataLayerModel\CurrentProductList.cs" />
     <Compile Include="DataLayerModel\Customer.cs" />
+    <Compile Include="DataLayerModel\CustomerAndSuppliersByCity.cs" />
+    <Compile Include="DataLayerModel\CustomerCustomerDemo.cs" />
+    <Compile Include="DataLayerModel\CustomerDemographic.cs" />
+    <Compile Include="DataLayerModel\CustOrderDetailInput.cs" />
     <Compile Include="DataLayerModel\CustOrdersDetail.cs" />
+    <Compile Include="DataLayerModel\Employee.cs" />
+    <Compile Include="DataLayerModel\EmployeeTerritory.cs" />
+    <Compile Include="DataLayerModel\Invoice.cs" />
     <Compile Include="DataLayerModel\MainGridOrder.cs" />
     <Compile Include="DataLayerModel\MainOrderDetails.cs" />
+    <Compile Include="DataLayerModel\Order.cs" />
+    <Compile Include="DataLayerModel\OrderDetail.cs" />
+    <Compile Include="DataLayerModel\OrderDetailsBack.cs" />
+    <Compile Include="DataLayerModel\OrderDetailsExtended.cs" />
+    <Compile Include="DataLayerModel\OrdersBack.cs" />
+    <Compile Include="DataLayerModel\OrdersQry.cs" />
+    <Compile Include="DataLayerModel\OrderSubtotal.cs" />
+    <Compile Include="DataLayerModel\ProductsAboveAveragePrice.cs" />
+    <Compile Include="DataLayerModel\ProductSalesFor1997.cs" />
+    <Compile Include="DataLayerModel\ProductsByCategory.cs" />
+    <Compile Include="DataLayerModel\QuarterlyOrder.cs" />
+    <Compile Include="DataLayerModel\Region.cs" />
+    <Compile Include="DataLayerModel\SalesByCategory.cs" />
+    <Compile Include="DataLayerModel\SalesTotalsByAmount.cs" />
+    <Compile Include="DataLayerModel\Shipper.cs" />
+    <Compile Include="DataLayerModel\SummarizedOrder.cs" />
+    <Compile Include="DataLayerModel\SummaryOfSalesByQuarter.cs" />
+    <Compile Include="DataLayerModel\SummaryOfSalesByYear.cs" />
+    <Compile Include="DataLayerModel\Supplier.cs" />
+    <Compile Include="DataLayerModel\Territory.cs" />
+    <Compile Include="DataLayerModel\TodoItem.cs" />
+    <Compile Include="DataLayerModel\User.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

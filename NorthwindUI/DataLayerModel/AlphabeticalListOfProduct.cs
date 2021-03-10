@@ -5,14 +5,8 @@ using System.Collections.Generic;
 
 namespace NorthwindUI.DataLayerModel
 {
-    public partial class Product
+    public partial class AlphabeticalListOfProduct
     {
-        public Product()
-        {
-            OrderDetails = new HashSet<OrderDetail>();
-            OrderDetailsBacks = new HashSet<OrderDetailsBack>();
-        }
-
         public int ProductId { get; set; }
         public string ProductName { get; set; }
         public int? SupplierId { get; set; }
@@ -23,10 +17,6 @@ namespace NorthwindUI.DataLayerModel
         public short? UnitsOnOrder { get; set; }
         public short? ReorderLevel { get; set; }
         public bool Discontinued { get; set; }
-
-        public virtual Category Category { get; set; }
-        public virtual Supplier Supplier { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-        public virtual ICollection<OrderDetailsBack> OrderDetailsBacks { get; set; }
+        public string CategoryName { get; set; }
     }
 }

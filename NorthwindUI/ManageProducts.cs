@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NorthwindUI.DataLayerModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,10 +49,10 @@ namespace NorthwindUI
             int productId = (int)dgvProductList.Rows[e.RowIndex].Cells[0].Value;
             Product productDetail = DataLayerAPI.GetProductDetails(productId);
 
-            lblProductName.Text = productDetail.productName;
-            lblUnitPrice.Text = productDetail.unitPrice.ToString();
+            lblProductName.Text = productDetail.ProductName;
+            lblUnitPrice.Text = productDetail.UnitPrice.ToString();
 
-            if (productDetail.discontinued == true)
+            if (productDetail.Discontinued == true)
             {
                 lblDiscontinued.Text = "Yes";
             }
@@ -62,10 +63,10 @@ namespace NorthwindUI
 
             _updateProductId = productId;
 
-            lblUnitsOnOrder.Text = productDetail.unitsOnOrder.ToString();
-            lblUnitsInStock.Text = productDetail.unitsInStock.ToString();
-            lblQuantityPerUnit.Text = productDetail.quantityPerUnit.ToString();
-            lblReorderLevel.Text = productDetail.reorderLevel.ToString();
+            lblUnitsOnOrder.Text = productDetail.UnitsOnOrder.ToString();
+            lblUnitsInStock.Text = productDetail.UnitsInStock.ToString();
+            lblQuantityPerUnit.Text = productDetail.QuantityPerUnit.ToString();
+            lblReorderLevel.Text = productDetail.ReorderLevel.ToString();
         }
 
         private void btnProductAdd_Click(object sender, EventArgs e)
@@ -107,12 +108,14 @@ namespace NorthwindUI
         {
             Product product = new Product();
 
-            product.productName = txtProductName.Text;
-            product.quantityPerUnit = txtQuantity.Text;
-            product.unitPrice = int.Parse(txtPrice.Text);
-            product.unitsInStock = int.Parse(txtUnitsInStock.Text);
-            product.categoryId = 2;
-            product.supplier = 29;
+            product.ProductName = txtProductName.Text;
+            product.QuantityPerUnit = txtQuantity.Text;
+            product.UnitPrice = int.Parse(txtPrice.Text);
+            product.UnitsInStock = short.Parse(txtUnitsInStock.Text);
+            product.CategoryId = 2;
+            Supplier supplier = new Supplier();
+            supplier.SupplierId = 29;
+            product.Supplier = supplier;
 
             if (_updateProductId == -1)
             {
@@ -120,7 +123,7 @@ namespace NorthwindUI
             }
             else
             {
-                product.productId = _updateProductId;
+                product.ProductId = _updateProductId;
                 //update Product
                 DataLayerAPI.UpdateProduct(product);
                 lblDetails.Visible = false;
@@ -134,6 +137,7 @@ namespace NorthwindUI
                 btnSaveProduct.Visible = false;
                 btnCancel.Visible = false;
             }
+
 
             //refreshes List
             dgvProductList.DataSource = DataLayerAPI.GetProducts();
